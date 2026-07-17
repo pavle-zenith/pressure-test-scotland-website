@@ -1,0 +1,86 @@
+/* Compact rectangular buttons, sharp corners, inline arrow that never wraps. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  white-space: nowrap;
+}
+.label svg {
+  flex-shrink: 0;
+}
+.arrow {
+  flex-shrink: 0;
+}
+
+/* Sizes: compact, ~46-50px tall. */
+.md {
+  font-size: var(--step-0);
+  padding: 0.8em 1.35em;
+}
+.lg {
+  font-size: var(--step-0);
+  padding: 0.9em 1.5em;
+}
+
+.primary {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  border-color: var(--color-accent);
+}
+.primary:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: #fff;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--color-heading);
+  border-color: var(--color-border-strong);
+}
+.secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.white {
+  background: #fff;
+  color: var(--color-accent);
+  border-color: #fff;
+}
+.white:hover {
+  background: var(--color-accent-tint);
+  border-color: var(--color-accent-tint);
+  color: var(--color-accent-hover);
+}
+
+.phone {
+  background: #fff;
+  color: var(--color-accent);
+  border-color: var(--color-border);
+}
+.phone:hover {
+  border-color: var(--color-accent);
+}

@@ -1,0 +1,35 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# env
+.env
+.env*.local
+
+# macOS
+.DS_Store
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# reference material (design screenshots + client docs, not part of the app)
+/Site examples
+/PressureTest_ClientShared
+# original full-size stock photos; the optimized copies live in src/assets/images
+/Stock Images
+/PressureTest Van.jpeg

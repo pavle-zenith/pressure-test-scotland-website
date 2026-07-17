@@ -1,0 +1,108 @@
+.card {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 24rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-xl);
+  background: var(--color-bg-navy);
+}
+.brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-on-navy);
+  font-size: var(--step-1);
+}
+.stars {
+  display: inline-flex;
+  gap: 3px;
+  color: #fff;
+}
+
+.body {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-alt);
+  padding: var(--space-xl);
+}
+.mark {
+  position: absolute;
+  right: var(--space-xl);
+  bottom: var(--space-lg);
+  color: var(--color-accent);
+  opacity: 0.1;
+}
+.quote {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  max-width: 48ch;
+}
+/* Short pull-quote drawn from the review. */
+.highlight {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: 600;
+  color: var(--color-heading);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--space-md);
+}
+/* The full review, quieter beneath the highlight. */
+.full {
+  font-size: var(--step-0);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+.cite {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  margin-top: auto;
+  padding-top: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+.name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-heading);
+  font-size: var(--step-1);
+}
+.meta {
+  font-size: var(--step-0);
+  color: var(--color-text-muted);
+}
+
+.media {
+  position: relative;
+  min-height: 20rem;
+}
+.mediaImg {
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .media {
+    order: -1;
+    min-height: 14rem;
+  }
+}

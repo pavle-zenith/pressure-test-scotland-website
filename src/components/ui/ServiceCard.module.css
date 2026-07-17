@@ -1,0 +1,104 @@
+/* Editorial service card: a clearly-visible photo fills the card, a dark
+   gradient scrim anchors the text to the bottom so it stays readable. */
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-navy-800);
+  border: 1px solid var(--color-navy-border);
+  border-radius: var(--radius-md);
+  height: 100%;
+  min-height: 22rem;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+.card:hover {
+  border-color: var(--color-accent);
+}
+
+/* The photo, clearly visible. */
+.bg {
+  object-fit: cover;
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.card:hover .bg {
+  transform: scale(1.04);
+}
+/* Scrim: a heavier navy wash so the photo reads as a subtle backdrop and the
+   text sits with strong contrast. Deepens across most of the card. */
+.tint {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 21, 34, 0.55) 0%,
+    rgba(7, 21, 34, 0.68) 40%,
+    rgba(7, 21, 34, 0.85) 70%,
+    rgba(7, 21, 34, 0.97) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  /* Push content to the bottom, over the strong part of the scrim. */
+  justify-content: flex-end;
+  gap: var(--space-2xs);
+  padding: var(--space-xl);
+  height: 100%;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  margin-bottom: var(--space-sm);
+}
+
+.name {
+  font-size: var(--step-2);
+  margin: 0;
+  color: #fff;
+}
+.name a {
+  color: #fff;
+}
+/* Stretch the link over the whole card for a big tap target. */
+.name a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+}
+.card:hover .name a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.what {
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: var(--space-sm);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step--1);
+  color: #fff;
+}
+.card:hover .more {
+  color: var(--color-accent-tint);
+}

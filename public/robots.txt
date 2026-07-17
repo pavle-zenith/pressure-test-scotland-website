@@ -1,0 +1,23 @@
+# Pressure Test Scotland
+# All standard crawlers welcome.
+User-agent: *
+Allow: /
+
+# AI answer engines explicitly allowed. Blocking them means zero citation
+# eligibility in AI Overviews and LLM answers, which is a core goal for this site.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://www.pressuretestscotland.co.uk/sitemap-index.xml
