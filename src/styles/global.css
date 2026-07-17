@@ -71,6 +71,11 @@ strong {
   color: var(--color-accent);
 }
 
+/* Inert links (targets not built yet). Keep their look, drop the pointer. */
+[aria-disabled='true'] {
+  cursor: default;
+}
+
 :focus-visible {
   outline: var(--border-thick) solid var(--color-focus);
   outline-offset: 2px;

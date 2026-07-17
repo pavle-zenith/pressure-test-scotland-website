@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
+import { isLiveHref } from '@/lib/routes';
 import styles from './Button.module.css';
 
 type Variant = 'primary' | 'secondary' | 'white' | 'phone';
@@ -39,21 +40,29 @@ export default function Button(props: Props) {
 
   if (props.href !== undefined) {
     const { href, ...anchorRest } = rest as LinkProps;
-    // Internal links use next/link; external (tel:, mailto:, http) use a plain anchor.
+    const inner = (
+      <>
+        <span className={styles.label}>{children}</span>
+        {arrow && <Arrow />}
+      </>
+    );
+
+    // Links to pages that do not exist yet render as inert (no navigation) so a
+    // demo of the home page never hits a 404.
+    if (!isLiveHref(href)) {
+      return (
+        <span className={cls} aria-disabled="true" role="link">{inner}</span>
+      );
+    }
+
     const isInternal = href.startsWith('/');
     if (isInternal) {
       return (
-        <Link href={href} className={cls} {...anchorRest}>
-          <span className={styles.label}>{children}</span>
-          {arrow && <Arrow />}
-        </Link>
+        <Link href={href} className={cls} {...anchorRest}>{inner}</Link>
       );
     }
     return (
-      <a href={href} className={cls} {...anchorRest}>
-        <span className={styles.label}>{children}</span>
-        {arrow && <Arrow />}
-      </a>
+      <a href={href} className={cls} {...anchorRest}>{inner}</a>
     );
   }
 

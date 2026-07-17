@@ -102,3 +102,17 @@
 .card:hover .more {
   color: var(--color-accent-tint);
 }
+
+@media (max-width: 560px) {
+  .card {
+    min-height: 17rem;
+  }
+  .content {
+    padding: var(--space-lg);
+  }
+  .icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: var(--space-sm);
+  }
+}

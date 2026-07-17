@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import Image, { type StaticImageData } from 'next/image';
 import type { Service } from '@/data/types';
+import SmartLink from './SmartLink';
 import styles from './ServiceCard.module.css';
 
 // One service card. Dark navy fill with a heavily-faded photo behind the text,
@@ -38,7 +38,7 @@ export default function ServiceCard({ service, image }: Props) {
           </svg>
         </span>
         <h3 className={styles.name}>
-          <Link href={href}>{service.name}</Link>
+          <SmartLink href={href}>{service.name}</SmartLink>
         </h3>
         <p className={styles.what}>{service.what}</p>
         <span className={styles.more} aria-hidden="true">

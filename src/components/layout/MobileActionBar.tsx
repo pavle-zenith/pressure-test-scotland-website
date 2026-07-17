@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { SITE } from '@/data/site';
+import SmartLink from '@/components/ui/SmartLink';
 import styles from './MobileActionBar.module.css';
 
 // Sticky bottom bar on mobile: two actions only, Call and Quote. Hidden at
@@ -13,9 +13,9 @@ export default function MobileActionBar() {
         </svg>
         Call
       </a>
-      <Link className={`${styles.action} ${styles.quote}`} href="/contact">
+      <SmartLink className={`${styles.action} ${styles.quote}`} href="/contact">
         Get a Quote
-      </Link>
+      </SmartLink>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { SITE } from '@/data/site';
+import { isLiveHref } from '@/lib/routes';
 import Button from '@/components/ui/Button';
 import styles from './Header.module.css';
 
@@ -56,14 +57,20 @@ export default function Header() {
           <ul className={styles.navList}>
             {SITE.nav.map((item) => (
               <li key={item.href}>
-                <Link
-                  className={`${styles.navLink} ${isActive(item.href) ? styles.active : ''}`}
-                  href={item.href}
-                  aria-current={isActive(item.href) ? 'page' : undefined}
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                {isLiveHref(item.href) ? (
+                  <Link
+                    className={`${styles.navLink} ${isActive(item.href) ? styles.active : ''}`}
+                    href={item.href}
+                    aria-current={isActive(item.href) ? 'page' : undefined}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className={`${styles.navLink} ${isActive(item.href) ? styles.active : ''}`} aria-disabled="true">
+                    {item.label}
+                  </span>
+                )}
               </li>
             ))}
           </ul>

@@ -106,3 +106,21 @@
     min-height: 14rem;
   }
 }
+
+@media (max-width: 560px) {
+  .bar {
+    padding: var(--space-sm) var(--space-lg);
+  }
+  .body {
+    padding: var(--space-lg);
+  }
+  .mark {
+    right: var(--space-md);
+    bottom: var(--space-md);
+    width: 80px;
+    height: 80px;
+  }
+  .cite {
+    padding-top: var(--space-lg);
+  }
+}

@@ -10,6 +10,15 @@ export { default as ctaValve } from './cta-valve.jpg';
 export { default as processPipework } from './services-pipework.jpg';
 export { default as featuredPipes } from './contractors-pipes.jpg';
 export { default as whyVan } from './why-van.jpg';
+export { default as coverageScotland } from './coverage-scotland.jpg';
+
+// Why-choose panel images, one per differentiator (01-04). Real van first.
+import whyVanImg from './why-van.jpg';
+import whyPipesImg from './hero-pipes.jpg';
+import whyContractorsImg from './contractors-pipes.jpg';
+import whyPipelineImg from './about-pipeline.jpg';
+import type { StaticImageData as _SID } from 'next/image';
+export const whyImages: _SID[] = [whyVanImg, whyPipesImg, whyContractorsImg, whyPipelineImg];
 
 // Service-card backgrounds (faded behind card text), keyed by service slug.
 import svcMainsLaying from './svc-mains-laying.jpg';

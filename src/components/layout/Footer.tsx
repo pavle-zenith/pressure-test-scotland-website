@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { SITE } from '@/data/site';
 import { SERVICES } from '@/data/services';
 import { confirmedAccreditations } from '@/data/accreditations';
+import SmartLink from '@/components/ui/SmartLink';
 import styles from './Footer.module.css';
 
 const year = 2026;
@@ -13,14 +13,14 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
-          <Link href="/" className={styles.logo} aria-label={`${SITE.name}, home`}>
+          <SmartLink href="/" className={styles.logo} aria-label={`${SITE.name}, home`}>
             <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <rect width="40" height="40" rx="6" fill="var(--color-accent)" />
               <path d="M9 26 C9 15 20 15 20 15 C20 15 31 15 31 26" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" />
               <path d="M14 26h12" stroke="var(--color-mint)" strokeWidth="2.5" strokeLinecap="round" />
             </svg>
             <span>{SITE.name}</span>
-          </Link>
+          </SmartLink>
           <p className={styles.tagline}>
             One specialist for the whole water mains commissioning stage. Based in Ayr, working Scotland-wide.
           </p>
@@ -35,7 +35,7 @@ export default function Footer() {
           <h2 className={styles.heading}>Services</h2>
           <ul>
             {footerServices.map((s) => (
-              <li key={s.slug}><Link href={`/services#${s.slug}`}>{s.name}</Link></li>
+              <li key={s.slug}><SmartLink href={`/services#${s.slug}`}>{s.name}</SmartLink></li>
             ))}
           </ul>
         </nav>
@@ -43,10 +43,10 @@ export default function Footer() {
         <nav className={styles.col} aria-label="Company">
           <h2 className={styles.heading}>Company</h2>
           <ul>
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/services">Services</Link></li>
-            <li><Link href="/portfolio">Portfolio</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><SmartLink href="/about">About</SmartLink></li>
+            <li><SmartLink href="/services">Services</SmartLink></li>
+            <li><SmartLink href="/portfolio">Portfolio</SmartLink></li>
+            <li><SmartLink href="/contact">Contact</SmartLink></li>
           </ul>
         </nav>
 
@@ -61,8 +61,8 @@ export default function Footer() {
       <div className={`container ${styles.base}`}>
         <p>&copy; 2013–{year} {SITE.legalName}. Registered in Scotland, company no. {SITE.companyNumber}.</p>
         <ul className={styles.legal}>
-          <li><Link href="/privacy-policy">Privacy</Link></li>
-          <li><Link href="/accessibility">Accessibility</Link></li>
+          <li><SmartLink href="/privacy-policy">Privacy</SmartLink></li>
+          <li><SmartLink href="/accessibility">Accessibility</SmartLink></li>
         </ul>
       </div>
     </footer>
