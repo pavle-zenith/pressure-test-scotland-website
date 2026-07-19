@@ -120,6 +120,26 @@ export function breadcrumbSchema(trail: { name: string; path: string }[]): JsonL
 }
 
 /**
+ * ContactPage node with a ContactPoint. References the org rather than
+ * redefining it.
+ */
+export function contactPageSchema(): JsonLdNode {
+  return {
+    '@type': 'ContactPage',
+    url: absolute('/contact'),
+    name: `Contact ${SITE.shortName}`,
+    about: { '@id': ORG_ID },
+    mainEntity: {
+      '@type': 'ContactPoint',
+      telephone: SITE.phone.display,
+      contactType: 'sales',
+      areaServed: SITE.areaServed,
+      availableLanguage: 'English',
+    },
+  };
+}
+
+/**
  * Wrap a set of nodes in one @graph with a shared context. This is what gets
  * JSON.stringify'd into the single ld+json script.
  */

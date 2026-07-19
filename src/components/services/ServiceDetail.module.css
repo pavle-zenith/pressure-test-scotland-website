@@ -1,0 +1,128 @@
+/* Large service card: content one side, image the other, alternating per row. */
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  background: #fff;
+  min-height: 30rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.75rem, 1.25rem + 2vw, 3rem);
+}
+
+/* Square icon badge (blocky, no rounded corners). */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-heading);
+  margin-bottom: var(--space-xl);
+}
+
+.title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  font-size: var(--step-3);
+  margin: 0 0 var(--space-md);
+}
+.num {
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+  font-weight: 500;
+  color: var(--color-accent);
+}
+.what {
+  color: var(--color-text-muted);
+  font-size: var(--step-0);
+  line-height: var(--leading-normal);
+  margin: 0;
+  max-width: 46ch;
+}
+
+.rule {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-lg) 0;
+}
+
+.includedLabel {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-heading);
+  margin: 0 0 var(--space-sm);
+}
+.included {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-xl);
+}
+.included li {
+  position: relative;
+  padding-left: 1.4em;
+  color: var(--color-text-muted);
+}
+.included li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.cta {
+  margin-top: auto;
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.media {
+  position: relative;
+  min-height: 20rem;
+  background: var(--c-navy-800);
+}
+.mediaImg {
+  object-fit: cover;
+}
+
+/* Alternate: image on the left, content on the right. */
+.flipped .content {
+  order: 2;
+}
+.flipped .media {
+  order: 1;
+}
+
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  /* Always image on top on mobile, regardless of row parity. */
+  .flipped .content,
+  .content {
+    order: 2;
+  }
+  .flipped .media,
+  .media {
+    order: 1;
+    min-height: 16rem;
+    aspect-ratio: 16 / 10;
+  }
+}

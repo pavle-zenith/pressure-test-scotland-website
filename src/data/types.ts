@@ -10,6 +10,8 @@ export interface Service {
   what: string;
   /** One line: why it matters (the failure it prevents). */
   why: string;
+  /** "What's included" bullet points shown on the services page. */
+  included: string[];
   /** schema.org serviceType, kept precise for AI extraction. */
   serviceType: string;
 }

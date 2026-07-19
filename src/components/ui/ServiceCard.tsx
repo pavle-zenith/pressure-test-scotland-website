@@ -22,7 +22,9 @@ const icons: Record<string, string> = {
 };
 
 export default function ServiceCard({ service, image }: Props) {
-  const href = `/services#${service.slug}`;
+  // Link to the service's detail page. SmartLink renders it inert until that
+  // page exists (only slugs with authored detail content are live).
+  const href = `/services/${service.slug}`;
   const iconPath = icons[service.slug] ?? 'M4 7h16M4 12h16M4 17h16';
 
   return (

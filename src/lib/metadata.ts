@@ -31,7 +31,9 @@ export function pageMetadata({
     : undefined;
 
   return {
-    title: fullTitle,
+    // `absolute` bypasses the root layout's title template, so the brand suffix
+    // (added here) is not applied twice.
+    title: { absolute: fullTitle },
     description,
     alternates: { canonical },
     robots: noindex ? { index: false, follow: false } : undefined,

@@ -11,6 +11,7 @@ export { default as processPipework } from './services-pipework.jpg';
 export { default as featuredPipes } from './contractors-pipes.jpg';
 export { default as whyVan } from './why-van.jpg';
 export { default as coverageScotland } from './coverage-scotland.jpg';
+export { default as pipeTexture } from './pipe-texture.jpg';
 
 // Why-choose panel images, one per differentiator (01-04). Real van first.
 import whyVanImg from './why-van.jpg';

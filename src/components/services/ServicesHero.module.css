@@ -1,0 +1,61 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--section-y);
+}
+/* Very faint pipe texture behind the hero content. */
+.texture {
+  object-fit: cover;
+  opacity: 0.06;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse 100% 90% at 60% 40%, #000 30%, transparent 92%);
+}
+.top {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: var(--space-2xl);
+  align-items: end;
+  margin-bottom: var(--space-2xl);
+}
+.title {
+  font-size: var(--step-6);
+  margin: var(--space-sm) 0 0;
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-lg);
+}
+.intro {
+  font-size: var(--step-1);
+  color: var(--color-text-muted);
+  line-height: var(--leading-snug);
+  margin: 0;
+  max-width: 40ch;
+}
+
+.banner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 24 / 9;
+}
+.bannerImg {
+  object-fit: cover;
+}
+
+@media (max-width: 860px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+  }
+  .banner {
+    aspect-ratio: 16 / 10;
+  }
+}
