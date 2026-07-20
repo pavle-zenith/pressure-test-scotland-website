@@ -1,0 +1,131 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  align-items: stretch;
+}
+
+/* Left: the work image. */
+.media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-navy);
+  min-height: 22rem;
+}
+.mediaImg {
+  object-fit: cover;
+}
+.mediaPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(120% 120% at 30% 20%, #123049 0%, var(--c-navy-800) 70%);
+}
+
+/* Right: blue panel with a faint Scotland photo behind it. */
+.panel {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-accent);
+  min-height: 22rem;
+}
+.panelBg {
+  object-fit: cover;
+  opacity: 0.14;
+  mix-blend-mode: luminosity;
+}
+.panelInner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.75rem, 1.25rem + 2vw, 3rem);
+  color: #fff;
+}
+.title {
+  font-size: var(--step-3);
+  color: #fff;
+  margin: 0;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+  max-width: 20ch;
+}
+
+/* Stat blocks: big value over a small label, like the reference. Two equal
+   columns so the row stays aligned regardless of title or value length. */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: auto;
+  padding-top: var(--space-xl);
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  min-width: 0;
+}
+.statValue {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-2);
+  color: #fff;
+  line-height: var(--leading-snug);
+}
+.statLabel {
+  font-size: var(--step--1);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.quote {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  margin-top: var(--space-lg);
+  background: #fff;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-1);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.quote:hover {
+  background: var(--color-bg-alt);
+  transform: translateY(-2px);
+}
+.quote svg {
+  transition: transform 0.15s ease;
+}
+.quote:hover svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 860px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .media {
+    min-height: 15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    gap: var(--space-lg);
+  }
+  .quote {
+    align-self: stretch;
+    justify-content: center;
+  }
+}

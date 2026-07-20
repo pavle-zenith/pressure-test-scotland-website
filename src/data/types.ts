@@ -74,13 +74,26 @@ export interface Accreditation {
 
 export interface ProjectSnapshot {
   slug: string;
+  /** Title: what plus where, e.g. "Six-house development, Currie". */
   title: string;
-  /** Where the main was. */
+  /** Where the main was. The town is the local-SEO signal. */
   location: string;
-  /** What the main was (size, length, context). */
+  /** Who the work was for: developer, groundworks contractor, etc. */
+  client: string;
+  /** What the main was (type, size, length, context). */
   scope: string;
-  /** What PTS did and the outcome. */
+  /** What PTS did and the outcome, ending on the certificate/sign-off. */
   outcome: string;
+  /** Small scannable labels: location, main type, stages delivered. */
+  tags: string[];
+  /**
+   * Path under /public for a real site photo, or null when no photo exists yet.
+   * Never a stock image: a card renders text-only rather than fake a photo.
+   */
+  image: string | null;
+  /** Alt text naming the work and the place, e.g. "New water main, Currie". */
+  imageAlt?: string;
+  /** True only for real, publish-cleared jobs. Placeholders stay false. */
   confirmed: boolean;
 }
 

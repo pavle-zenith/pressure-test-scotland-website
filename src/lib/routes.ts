@@ -7,7 +7,14 @@ import { SERVICE_DETAILS } from '@/data/service-details';
 // authored content in service-details.ts.
 //
 // To enable a page once it is built: add its path here (or author its detail).
-const LIVE_ROUTES = new Set<string>(['/', '/services', '/contact']);
+const LIVE_ROUTES = new Set<string>([
+  '/',
+  '/services',
+  '/projects',
+  '/contact',
+  '/privacy-policy',
+  '/cookie-policy',
+]);
 
 const LIVE_SERVICE_DETAILS = new Set(
   Object.keys(SERVICE_DETAILS).map((slug) => `/services/${slug}`),

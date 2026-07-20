@@ -1,69 +1,108 @@
-import { SITE } from '@/data/site';
+import { SITE, NAP_ONE_LINE } from '@/data/site';
 import { SERVICES } from '@/data/services';
-import { confirmedAccreditations } from '@/data/accreditations';
 import SmartLink from '@/components/ui/SmartLink';
 import styles from './Footer.module.css';
 
 const year = 2026;
 
-export default function Footer() {
-  const footerServices = SERVICES.slice(0, 5);
+// Link columns. Hrefs that are not live yet render inert via SmartLink, so a
+// demo never hits a 404. The arrow glyph is decorative and CSS-drawn.
+const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] = [
+  {
+    heading: 'Services',
+    links: SERVICES.slice(0, 4).map((s) => ({ label: s.name, href: `/services#${s.slug}` })),
+  },
+  {
+    heading: 'Company',
+    links: [
+      { label: 'About', href: '/about' },
+      { label: 'Services', href: '/services' },
+      { label: 'Projects', href: '/projects' },
+      { label: 'Contact', href: '/contact' },
+    ],
+  },
+  {
+    heading: 'Coverage',
+    links: [
+      { label: 'Ayrshire', href: '/contact' },
+      { label: 'Glasgow', href: '/contact' },
+      { label: 'Edinburgh', href: '/contact' },
+      { label: 'Central Belt', href: '/contact' },
+    ],
+  },
+  {
+    heading: 'Legal',
+    links: [
+      { label: 'Privacy', href: '/privacy-policy' },
+      { label: 'Cookies', href: '/cookie-policy' },
+    ],
+  },
+];
 
+export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={`container ${styles.grid}`}>
-        <div className={styles.brand}>
-          <SmartLink href="/" className={styles.logo} aria-label={`${SITE.name}, home`}>
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-              <rect width="40" height="40" rx="6" fill="var(--color-accent)" />
-              <path d="M9 26 C9 15 20 15 20 15 C20 15 31 15 31 26" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" />
-              <path d="M14 26h12" stroke="var(--color-mint)" strokeWidth="2.5" strokeLinecap="round" />
-            </svg>
-            <span>{SITE.name}</span>
-          </SmartLink>
-          <p className={styles.tagline}>
-            One specialist for the whole water mains commissioning stage. Based in Ayr, working Scotland-wide.
-          </p>
-          {confirmedAccreditations.length > 0 && (
-            <ul className={styles.badges}>
-              {confirmedAccreditations.map((a) => <li key={a.id}>{a.label}</li>)}
-            </ul>
-          )}
-        </div>
-
-        <nav className={styles.col} aria-label="Services">
-          <h2 className={styles.heading}>Services</h2>
-          <ul>
-            {footerServices.map((s) => (
-              <li key={s.slug}><SmartLink href={`/services#${s.slug}`}>{s.name}</SmartLink></li>
+      <div className="container">
+        <div className={styles.block}>
+          {/* Top: link columns, socials only if confirmed profiles exist. */}
+          <div className={styles.top}>
+            {COLUMNS.map((col) => (
+              <nav key={col.heading} className={styles.col} aria-label={col.heading}>
+                <h2 className={styles.heading}>{col.heading}</h2>
+                <ul>
+                  {col.links.map((l) => (
+                    <li key={l.label + l.href}>
+                      <SmartLink href={l.href} className={styles.link}>{l.label}</SmartLink>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             ))}
-          </ul>
-        </nav>
 
-        <nav className={styles.col} aria-label="Company">
-          <h2 className={styles.heading}>Company</h2>
-          <ul>
-            <li><SmartLink href="/about">About</SmartLink></li>
-            <li><SmartLink href="/services">Services</SmartLink></li>
-            <li><SmartLink href="/portfolio">Portfolio</SmartLink></li>
-            <li><SmartLink href="/contact">Contact</SmartLink></li>
-          </ul>
-        </nav>
+            {SITE.sameAs.length > 0 && (
+              <ul className={styles.social} aria-label="Social profiles">
+                {SITE.sameAs.map((href) => (
+                  <li key={href}>
+                    <a href={href} className={styles.socialLink} rel="me noopener" target="_blank">
+                      <span className={styles.socialDot} aria-hidden="true" />
+                      <span className="visually-hidden">{new URL(href).hostname}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
 
-        <div className={styles.col}>
-          <h2 className={styles.heading}>Contact</h2>
-          <a className={`${styles.contact} ${styles.contactStrong}`} href={SITE.phone.href}>{SITE.phone.display}</a>
-          <a className={styles.contact} href={SITE.email.href}>{SITE.email.display}</a>
-          <p className={styles.coverage}>Based in Ayr, operating Scotland-wide</p>
+          {/* The close: giant statement + white pill CTA. */}
+          <div className={styles.statementRow}>
+            <p className={styles.statement}>
+              One specialist for the whole<br />water mains commissioning stage.
+            </p>
+            <SmartLink href="/contact" className={styles.pill}>
+              Get a Quote
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </SmartLink>
+          </div>
+
+          {/* Base: identity left, contact right, over a hairline divider. */}
+          <div className={styles.base}>
+            <div className={styles.baseLeft}>
+              <SmartLink href="/" className={styles.wordmark} aria-label={`${SITE.name}, home`}>
+                {SITE.name}
+              </SmartLink>
+              <p className={styles.reg}>
+                &copy; {SITE.foundingYear}&ndash;{year} {SITE.legalName}. Registered in Scotland, company no. {SITE.companyNumber}.
+              </p>
+            </div>
+            <address className={styles.baseRight}>
+              <a href={SITE.phone.href} className={styles.phone}>{SITE.phone.display}</a>
+              <span className={styles.nap}>{NAP_ONE_LINE}</span>
+              <span className={styles.nap}>Based in Ayr, operating Scotland-wide</span>
+            </address>
+          </div>
         </div>
-      </div>
-
-      <div className={`container ${styles.base}`}>
-        <p>&copy; 2013–{year} {SITE.legalName}. Registered in Scotland, company no. {SITE.companyNumber}.</p>
-        <ul className={styles.legal}>
-          <li><SmartLink href="/privacy-policy">Privacy</SmartLink></li>
-          <li><SmartLink href="/accessibility">Accessibility</SmartLink></li>
-        </ul>
       </div>
     </footer>
   );

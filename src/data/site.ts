@@ -64,12 +64,12 @@ export const SITE = {
     'Scotland',
   ],
 
-  // Primary navigation. Matches the client's draft (Portfolio, not Projects).
+  // Primary navigation. The old "Portfolio" item is now "Projects" at /projects.
   nav: [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' },
-    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Projects', href: '/projects' },
   ] as NavItem[],
 
   // External profiles for schema `sameAs`. Add once confirmed.
