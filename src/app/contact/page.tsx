@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
-import { contactPageSchema, faqSchema } from '@/lib/schema';
+import { contactPageSchema, faqSchema, breadcrumbSchema } from '@/lib/schema';
 import { FAQS } from '@/data/faq';
 import JsonLd from '@/components/seo/JsonLd';
 import ContactHero from '@/components/contact/ContactHero';
@@ -19,7 +19,16 @@ export const metadata: Metadata = pageMetadata({
 export default function ContactPage() {
   return (
     <>
-      <JsonLd nodes={[contactPageSchema(), faqSchema(FAQS)]} />
+      <JsonLd
+        nodes={[
+          contactPageSchema(),
+          faqSchema(FAQS),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Contact', path: '/contact' },
+          ]),
+        ]}
+      />
       <ContactHero />
       <ContactSteps />
       <Coverage />

@@ -29,6 +29,10 @@
   padding: 0;
   margin: 0;
 }
+/* Odd number of services: the last card spans the row so it doesn't dangle. */
+.grid > li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
 
 @media (max-width: 960px) {
   .head {

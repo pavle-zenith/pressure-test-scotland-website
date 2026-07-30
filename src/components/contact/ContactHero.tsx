@@ -62,7 +62,7 @@ export default function ContactHero() {
           </div>
 
           <div className={styles.form}>
-            <QuoteForm source="contact-page" showRating submitLabel="Request a callback" />
+            <QuoteForm source="contact-page" showRating submitLabel="Get my quote" />
           </div>
         </div>
 

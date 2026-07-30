@@ -77,6 +77,18 @@
   display: flex;
   gap: var(--space-sm);
   flex-wrap: wrap;
+  align-items: center;
+}
+.emailLine {
+  flex-basis: 100%;
+  margin: var(--space-2xs) 0 0;
+  font-size: var(--step--1);
+  color: var(--color-on-navy-muted);
+}
+.emailLine a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 @media (max-width: 720px) {

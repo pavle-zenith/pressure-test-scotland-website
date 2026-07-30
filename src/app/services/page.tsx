@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
-import { allServiceSchemas } from '@/lib/schema';
+import { allServiceSchemas, breadcrumbSchema } from '@/lib/schema';
 import { SERVICES } from '@/data/services';
 import { serviceImages } from '@/assets/images';
 import JsonLd from '@/components/seo/JsonLd';
@@ -23,7 +23,16 @@ export const metadata: Metadata = pageMetadata({
 export default function ServicesPage() {
   return (
     <>
-      <JsonLd nodes={[...allServiceSchemas(), faqSchema(FAQS)]} />
+      <JsonLd
+        nodes={[
+          ...allServiceSchemas(),
+          faqSchema(FAQS),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Services', path: '/services' },
+          ]),
+        ]}
+      />
       <ServicesHero />
 
       <div className={`container section ${styles.list}`}>

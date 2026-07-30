@@ -44,7 +44,9 @@ export const PROJECTS: ProjectSnapshot[] = [
       'Fire main for a commercial unit swabbed, hydrostatically tested and chlorinated in a single mobilisation. Bacteriological samples came back clean first time and the full compliance pack was issued for sign-off.',
     tags: ['Glasgow', 'Fire main', 'Passed first time'],
     image: null,
-    confirmed: true,
+    // DUMMY: kept confirmed:false so it never renders publicly. Flip to true
+    // only once this is a real, client-cleared job with (ideally) a real photo.
+    confirmed: false,
   },
   {
     // DUMMY. Replace with a real cleared job before launch.
@@ -57,7 +59,8 @@ export const PROJECTS: ProjectSnapshot[] = [
       'A rural connection a couple of other firms would not travel to. Pressure test, chlorination and sampling all completed in one visit, with certificates issued a few days later ready for the Scottish Water connection.',
     tags: ['Perth and Kinross', 'New water main', 'Signed off'],
     image: null,
-    confirmed: true,
+    // DUMMY: kept confirmed:false so it never renders publicly.
+    confirmed: false,
   },
   {
     // DUMMY. Replace with a real cleared job before launch.
@@ -70,7 +73,8 @@ export const PROJECTS: ProjectSnapshot[] = [
       'New water mains supplied and laid across a twelve-plot site, then swabbed, tested, chlorinated and sampled through to a live Scottish Water connection kept on the developer’s programme.',
     tags: ['Ayr', 'New water main', '12 plots'],
     image: null,
-    confirmed: true,
+    // DUMMY: kept confirmed:false so it never renders publicly.
+    confirmed: false,
   },
 ];
 

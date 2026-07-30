@@ -20,12 +20,14 @@ const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] =
     ],
   },
   {
+    // Point at the coverage section, not the contact form: a user clicking
+    // "Glasgow" expects coverage info. Swap to /coverage/<area> pages when built.
     heading: 'Coverage',
     links: [
-      { label: 'Ayrshire', href: '/contact' },
-      { label: 'Glasgow', href: '/contact' },
-      { label: 'Edinburgh', href: '/contact' },
-      { label: 'Central Belt', href: '/contact' },
+      { label: 'Ayrshire', href: '/#coverage' },
+      { label: 'Glasgow', href: '/#coverage' },
+      { label: 'Edinburgh', href: '/#coverage' },
+      { label: 'Central Belt', href: '/#coverage' },
     ],
   },
   {

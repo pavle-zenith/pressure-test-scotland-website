@@ -25,19 +25,20 @@ export const whyImages: _SID[] = [whyVanImg, whyPipesImg, whyContractorsImg, why
 import svcMainsLaying from './svc-mains-laying.jpg';
 import svcSwabbing from './svc-swabbing.jpg';
 import svcPressureTesting from './svc-pressure-testing.jpg';
-import svcChlorination from './svc-chlorination.jpg';
 import svcSampling from './svc-sampling.jpg';
 import svcCertification from './svc-certification.jpg';
 
+// Keys match live SERVICES slugs. Swabbing and bacteriological-sampling were
+// consolidated into the chlorination box (2026-07-30); their photos are reused
+// below so no two adjacent cards show the same image.
 export const serviceImages: Record<string, StaticImageData> = {
   'mains-laying': svcMainsLaying,
-  swabbing: svcSwabbing,
   'pressure-testing': svcPressureTesting,
-  chlorination: svcChlorination,
-  'bacteriological-sampling': svcSampling,
+  // The consolidated swab/chlorinate/sample box: the swabbing photo reads best.
+  chlorination: svcSwabbing,
   certification: svcCertification,
-  // No dedicated flow/pressure photo yet; reuse the pressure-testing image.
-  'flow-and-pressure-testing': svcPressureTesting,
+  // Distinct from pressure-testing so the two do not repeat side by side.
+  'flow-and-pressure-testing': svcSampling,
 };
 
 // Who-we-work-with card images (clean, on top of each card), keyed by index.

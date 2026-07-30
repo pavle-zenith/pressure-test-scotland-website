@@ -21,7 +21,7 @@ type Status = { kind: 'ok' | 'error'; message: string } | null;
 export default function QuoteForm({
   source = 'website',
   showRating = false,
-  submitLabel = 'Request a callback',
+  submitLabel = 'Get my quote',
 }: Props) {
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState<Status>(null);
@@ -44,7 +44,7 @@ export default function QuoteForm({
         form.reset();
         setStatus({
           kind: 'ok',
-          message: 'Thanks. Your request is in. We will come back to you shortly, or call if it is urgent.',
+          message: 'Thanks, your request is in. You will have a quote by the next working day. Call 07749 245626 if it is urgent.',
         });
       } else {
         setStatus({
@@ -62,8 +62,8 @@ export default function QuoteForm({
   return (
     <form className={styles.form} method="POST" action="/api/quote" noValidate onSubmit={onSubmit}>
       {showRating && (
-        <div className={styles.rating}>
-          <span className={styles.ratingLabel}>Rated 5/5 for service quality</span>
+        <a className={styles.rating} href="/#reviews">
+          <span className={styles.ratingLabel}>Rated 5/5 by contractors and developers</span>
           <span className={styles.stars} aria-hidden="true">
             {Array.from({ length: 5 }).map((_, i) => (
               <svg key={i} width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
@@ -71,7 +71,7 @@ export default function QuoteForm({
               </svg>
             ))}
           </span>
-        </div>
+        </a>
       )}
 
       <input type="hidden" name="source" value={source} />
@@ -126,7 +126,7 @@ export default function QuoteForm({
       <button type="submit" className={styles.submit} disabled={busy}>{submitLabel}</button>
 
       <p className={styles.fallback}>
-        or call <a href={SITE.phone.href}>{SITE.phone.display}</a>
+        Quote back by the next working day. Or call <a href={SITE.phone.href}>{SITE.phone.display}</a>
       </p>
 
       {status && (

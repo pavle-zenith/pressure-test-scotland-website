@@ -29,7 +29,7 @@ export default function AboutStats() {
             </p>
           </div>
           <div className={styles.action}>
-            <Button href="/about" variant="primary" size="lg" arrow>Get a Quote</Button>
+            <Button href="/contact" variant="primary" size="lg" arrow>Get a Quote</Button>
           </div>
         </div>
 

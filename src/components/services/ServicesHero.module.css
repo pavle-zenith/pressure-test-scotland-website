@@ -43,7 +43,9 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  aspect-ratio: 24 / 9;
+  /* Slim divider band rather than a tall content-free photo, so the service
+     cards start within the first viewport. */
+  aspect-ratio: 24 / 5;
 }
 .bannerImg {
   object-fit: cover;

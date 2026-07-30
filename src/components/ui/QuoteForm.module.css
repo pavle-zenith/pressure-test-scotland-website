@@ -10,6 +10,11 @@
   justify-content: space-between;
   gap: var(--space-md);
   margin-bottom: var(--space-2xs);
+  text-decoration: none;
+  color: inherit;
+}
+.rating:hover .ratingLabel {
+  color: var(--color-accent);
 }
 .ratingLabel {
   font-family: var(--font-display);
@@ -52,23 +57,24 @@
 .selectWrap select {
   width: 100%;
   background: var(--color-bg);
-  border: 1px solid var(--color-border-strong);
+  border: 1px solid var(--color-input-border);
   border-radius: var(--radius-md);
   padding: 0.7em 0.85em;
   color: var(--color-heading);
   font-family: var(--font-body);
   font-size: var(--step-0);
-  transition: border-color var(--dur-fast) var(--ease-out);
+  transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
 }
 .field input::placeholder,
 .field textarea::placeholder {
-  color: var(--color-border-strong);
+  color: var(--color-text-faint);
 }
-.field input:focus,
-.field textarea:focus,
-.selectWrap select:focus {
+.field input:focus-visible,
+.field textarea:focus-visible,
+.selectWrap select:focus-visible {
   outline: none;
   border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-tint);
 }
 .field textarea {
   resize: vertical;

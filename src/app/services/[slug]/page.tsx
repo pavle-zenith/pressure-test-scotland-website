@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { pageMetadata } from '@/lib/metadata';
-import { serviceSchema, faqSchema } from '@/lib/schema';
+import { serviceSchema, faqSchema, breadcrumbSchema } from '@/lib/schema';
 import { SERVICES } from '@/data/services';
 import { SERVICE_DETAILS } from '@/data/service-details';
 import { serviceImages } from '@/assets/images';
@@ -52,7 +52,17 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-      <JsonLd nodes={[serviceSchema(service), faqSchema(detail.faqs)]} />
+      <JsonLd
+        nodes={[
+          serviceSchema(service),
+          faqSchema(detail.faqs),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Services', path: '/services' },
+            { name: service.name, path: `/services/${slug}` },
+          ]),
+        ]}
+      />
       <ServiceDetailHero service={service} detail={detail} image={image} />
       <ServiceDetailBody detail={detail} image={image} />
       <Process />

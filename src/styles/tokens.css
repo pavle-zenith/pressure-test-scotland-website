@@ -35,6 +35,8 @@
   --color-surface: var(--c-white); /* cards */
   --color-border: var(--c-grey-200);
   --color-border-strong: var(--c-grey-300);
+  /* Form-control boundary, 4:1 on white for WCAG 1.4.11 Non-text Contrast. */
+  --color-input-border: #75808f;
 
   --color-text: var(--c-slate);
   --color-heading: var(--c-navy-800);

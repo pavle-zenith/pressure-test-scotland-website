@@ -4,6 +4,10 @@
   gap: var(--space-md);
   align-items: stretch;
 }
+/* No photo yet: the panel spans the full width, no empty image box. */
+.cardSolo {
+  grid-template-columns: 1fr;
+}
 
 /* Left: the work image. */
 .media {
@@ -15,14 +19,6 @@
 }
 .mediaImg {
   object-fit: cover;
-}
-.mediaPlaceholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(120% 120% at 30% 20%, #123049 0%, var(--c-navy-800) 70%);
 }
 
 /* Right: blue panel with a faint Scotland photo behind it. */
@@ -54,15 +50,23 @@
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
   text-wrap: balance;
-  max-width: 20ch;
+  max-width: 24ch;
+}
+/* The strongest copy on the card: what PTS did and the outcome. */
+.outcome {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: var(--step-0);
+  line-height: var(--leading-normal);
+  margin: var(--space-md) 0 0;
+  max-width: 60ch;
 }
 
-/* Stat blocks: big value over a small label, like the reference. Two equal
-   columns so the row stays aligned regardless of title or value length. */
+/* Stat blocks: big value over a small label. Auto-fitting columns so two
+   (Location/Client) or three (adds Scope) both lay out cleanly. */
 .stats {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: var(--space-md) var(--space-lg);
   margin-top: auto;
   padding-top: var(--space-xl);
 }

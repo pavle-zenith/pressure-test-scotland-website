@@ -12,12 +12,20 @@ import styles from './WhyUs.module.css';
 export default function WhyUs() {
   const points = DIFFERENTIATORS.filter((d) => d.confirmed);
   const [active, setActive] = useState(0);
+  // Auto-rotation stops for good once the user picks a reason, so nobody reading
+  // a panel gets yanked to the next (WCAG 2.2.2 Pause, Stop, Hide).
+  const [paused, setPaused] = useState(false);
 
-  // Auto-rotate through the reasons; pauses briefly after a manual selection.
   useEffect(() => {
+    if (paused) return;
     const id = setInterval(() => setActive((i) => (i + 1) % points.length), 5000);
     return () => clearInterval(id);
-  }, [points.length, active]);
+  }, [points.length, paused]);
+
+  const select = (i: number) => {
+    setActive(i);
+    setPaused(true);
+  };
 
   const current = points[active];
 
@@ -30,14 +38,14 @@ export default function WhyUs() {
         </div>
 
         <div className={styles.body}>
-          <ul className={styles.list} role="tablist" aria-label="Reasons to choose us">
+          <ul className={styles.list} aria-label="Reasons to choose us">
             {points.map((point, i) => (
               <li key={point.title}>
                 <button
-                  role="tab"
-                  aria-selected={i === active}
+                  type="button"
+                  aria-pressed={i === active}
                   className={`${styles.item} ${i === active ? styles.itemActive : ''}`}
-                  onClick={() => setActive(i)}
+                  onClick={() => select(i)}
                 >
                   <span className={styles.num}>{String(i + 1).padStart(2, '0')}</span>
                   <span className={styles.itemTitle}>{point.title}</span>
@@ -46,7 +54,7 @@ export default function WhyUs() {
             ))}
           </ul>
 
-          <div className={styles.panel} role="tabpanel">
+          <div className={styles.panel}>
             <div className={styles.media}>
               {points.map((point, i) => (
                 <Image

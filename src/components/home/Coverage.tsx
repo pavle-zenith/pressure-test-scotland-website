@@ -17,7 +17,7 @@ function Pin() {
 
 export default function Coverage() {
   return (
-    <section className={`section section--alt ${styles.coverage}`} aria-labelledby="coverage-title">
+    <section id="coverage" className={`section section--alt ${styles.coverage}`} aria-labelledby="coverage-title">
       <Image src={coverageScotland} alt="" fill sizes="100vw" className={styles.texture} placeholder="blur" aria-hidden="true" />
       <div className={`container ${styles.inner}`}>
         <div className={styles.text}>

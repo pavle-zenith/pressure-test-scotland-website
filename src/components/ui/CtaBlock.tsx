@@ -42,6 +42,9 @@ export default function CtaBlock({
           </svg>
           {SITE.phone.display}
         </Button>
+        <p className={styles.emailLine}>
+          or email your drawings to <a href={SITE.email.href}>{SITE.email.display}</a>
+        </p>
       </div>
     </div>
   );

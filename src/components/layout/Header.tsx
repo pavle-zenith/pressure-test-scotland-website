@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SITE } from '@/data/site';
 import { isLiveHref } from '@/lib/routes';
 import Button from '@/components/ui/Button';
@@ -33,6 +33,16 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
 
+  // Escape closes the open mobile menu.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open]);
+
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
@@ -48,12 +58,13 @@ export default function Header() {
           className={`${styles.burger} ${open ? styles.burgerOpen : ''}`}
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
+          aria-controls="primary-nav"
           onClick={() => setOpen((v) => !v)}
         >
           <span /><span /><span />
         </button>
 
-        <nav className={`${styles.nav} ${open ? styles.navOpen : ''}`} aria-label="Primary">
+        <nav id="primary-nav" className={`${styles.nav} ${open ? styles.navOpen : ''}`} aria-label="Primary">
           <ul className={styles.navList}>
             {SITE.nav.map((item) => (
               <li key={item.href}>

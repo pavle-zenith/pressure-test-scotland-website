@@ -106,6 +106,20 @@ strong {
   padding-block: var(--section-y);
 }
 
+/* Keep in-page anchor targets clear of the ~72px sticky header. */
+:target,
+[id] {
+  scroll-margin-top: 88px;
+}
+
+/* The fixed mobile action bar (≤940px) would otherwise cover the footer's last
+   lines; reserve space for it at the bottom of the page. */
+@media (max-width: 940px) {
+  body {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom));
+  }
+}
+
 .section--alt {
   background: var(--color-bg-alt);
 }

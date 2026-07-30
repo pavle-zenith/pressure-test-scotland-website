@@ -64,11 +64,14 @@ export const SITE = {
     'Scotland',
   ],
 
-  // Primary navigation. About and Projects removed from the nav (2026-07-30);
-  // Contact remains reachable via the header's Get a Quote button.
+  // Primary navigation. About and Projects removed from the nav (2026-07-30).
+  // Contact is a real nav item so users scanning for it find it, in addition to
+  // the header's Get a Quote button. Projects stays unlinked and noindexed
+  // until there are 2+ real, cleared jobs to show.
   nav: [
     { label: 'Home', href: '/' },
     { label: 'Services', href: '/services' },
+    { label: 'Contact', href: '/contact' },
   ] as NavItem[],
 
   // External profiles for schema `sameAs`. Add once confirmed.

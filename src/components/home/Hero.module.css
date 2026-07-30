@@ -14,7 +14,9 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(90deg, rgba(7, 21, 34, 0.9) 0%, rgba(7, 21, 34, 0.62) 55%, rgba(7, 21, 34, 0.45) 100%);
+  /* Dark on the left where the text sits, lifting on the right so the pipe
+     photo reads behind the form's edge instead of a flat navy block. */
+  background: linear-gradient(90deg, rgba(7, 21, 34, 0.92) 0%, rgba(7, 21, 34, 0.72) 45%, rgba(7, 21, 34, 0.35) 100%);
 }
 
 .inner {
@@ -27,19 +29,41 @@
   padding-block: clamp(3rem, 2.5rem + 4vw, 6rem);
 }
 
-/* Text column: content at the top, certifications pinned to the bottom. */
+/* Text column: content flows top-down, certs follow (no space-between gap that
+   opened a dead zone against the tall form). */
 .text {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: var(--space-2xl);
+  gap: var(--space-xl);
 }
 
 .title {
   font-size: var(--step-6);
   color: #fff;
-  max-width: 16ch;
+  max-width: 18ch;
   margin: 0;
+  text-wrap: balance;
+}
+
+/* A short attributed pull-quote filling the space above the certs. */
+.pull {
+  margin: 0;
+  border-left: 3px solid var(--color-mint);
+  padding-left: var(--space-md);
+}
+.pull blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-2);
+  line-height: var(--leading-snug);
+  color: #fff;
+  max-width: 30ch;
+}
+.pull figcaption {
+  margin-top: var(--space-2xs);
+  font-size: var(--step--1);
+  color: var(--color-on-navy-muted);
 }
 .sub {
   margin-top: var(--space-md);

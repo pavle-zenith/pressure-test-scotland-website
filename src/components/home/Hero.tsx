@@ -35,7 +35,7 @@ export default function Hero() {
             </p>
 
             <div className={styles.actions}>
-              <Button href="/contact" variant="primary" size="lg" arrow>Get a Quote</Button>
+              <Button href="#quote-form" variant="primary" size="lg" arrow>Get my quote</Button>
               <Button href={SITE.phone.href} variant="white" size="lg">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2Z" fill="currentColor" />
@@ -43,6 +43,11 @@ export default function Hero() {
                 {SITE.phone.display}
               </Button>
             </div>
+
+            <figure className={styles.pull}>
+              <blockquote>Over 20 years, he has never let me down once.</blockquote>
+              <figcaption>Jim McCormack, Utilities Manager, TSL Contractors</figcaption>
+            </figure>
           </div>
 
           {confirmedAccreditations.length > 0 && (
@@ -57,8 +62,8 @@ export default function Hero() {
           )}
         </div>
 
-        <div className={styles.form}>
-          <QuoteForm source="home-hero" showRating submitLabel="Request a callback" />
+        <div className={styles.form} id="quote-form">
+          <QuoteForm source="home-hero" showRating submitLabel="Get my quote" />
         </div>
       </div>
 
