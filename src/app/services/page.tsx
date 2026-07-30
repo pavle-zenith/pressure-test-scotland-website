@@ -6,6 +6,7 @@ import { serviceImages } from '@/assets/images';
 import JsonLd from '@/components/seo/JsonLd';
 import ServicesHero from '@/components/services/ServicesHero';
 import ServiceDetail from '@/components/services/ServiceDetail';
+import Reviews from '@/components/home/Reviews';
 import Faq from '@/components/home/Faq';
 import FinalCta from '@/components/home/FinalCta';
 import { faqSchema } from '@/lib/schema';
@@ -31,6 +32,7 @@ export default function ServicesPage() {
         ))}
       </div>
 
+      <Reviews />
       <Faq />
       <FinalCta />
     </>

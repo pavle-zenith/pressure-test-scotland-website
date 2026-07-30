@@ -19,6 +19,7 @@ const icons: Record<string, string> = {
   chlorination: 'M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z',
   'bacteriological-sampling': 'M9 3h6M10 3v6l-4 9a2 2 0 0 0 2 3h8a2 2 0 0 0 2-3l-4-9V3',
   certification: 'M6 3h9l5 5v13H6zM14 3v6h6M9 13h6M9 17h4',
+  'flow-and-pressure-testing': 'M12 21a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm0-8 4-3',
 };
 
 export default function ServiceDetail({ service, index, image }: Props) {

@@ -19,10 +19,10 @@ export const PROCESS: ProcessStep[] = [
     order: 2,
     label: 'Pressure test',
     name: 'Hydrostatic pressure testing',
-    what: 'The main is filled, brought up to working pressure and held, then monitored against the allowable loss for the pipe and length.',
+    what: 'The main is filled, brought up to working pressure and held, then monitored against the allowable loss for the pipe and length. We test PE, MDPE, barrier and ductile.',
     why: 'It proves the pipe, joints and fittings hold before the main is tied in and buried, while a fault is still cheap to reach.',
     fails: 'A leak found after connection means digging up a live tie-in, a stalled programme and a very different repair bill.',
-    focus: ['Data logging', 'Working pressure', 'Joint integrity'],
+    focus: ['PE and MDPE', 'Barrier and ductile', 'Working pressure'],
   },
   {
     order: 3,

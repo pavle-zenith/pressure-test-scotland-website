@@ -10,7 +10,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'mains-laying',
     name: 'New mains, supplied and laid',
-    what: 'Supply, lay and construct new water, fire, sprinkler and rising mains as a WIRS accredited contractor.',
+    what: 'Scotland-wide supply, lay, construction and testing of new water, fire, sprinkler and rising mains as a WIRS accredited contractor.',
     why: 'One firm lays the main and takes it through commissioning, so the job does not fall between two trades.',
     included: [
       'Water, fire, sprinkler and rising mains',
@@ -18,18 +18,6 @@ export const SERVICES: Service[] = [
       'Primary tie-ins to Scottish Water',
     ],
     serviceType: 'Water main laying and installation',
-  },
-  {
-    slug: 'swabbing',
-    name: 'Swabbing and flushing',
-    what: 'Air, spoil and debris cleared out of the pipe first with a foam swab and flush.',
-    why: 'Skip this and your pressure test is invalid and your sample fails. We never skip it.',
-    included: [
-      'Foam swabbing through the main',
-      'Air and debris removal',
-      'Flush to clean running water',
-    ],
-    serviceType: 'Water main swabbing and pre-commission cleaning',
   },
   {
     slug: 'pressure-testing',
@@ -44,28 +32,18 @@ export const SERVICES: Service[] = [
     serviceType: 'Hydrostatic pressure testing of water mains',
   },
   {
+    // Consolidated box (client request 2026-07-30): swabbing, flushing,
+    // chlorination and bacteriological sampling combined to keep the grid tidy.
     slug: 'chlorination',
-    name: 'Chlorination and disinfection',
-    what: 'Swab, high-strength chlorine dose, contact time, then dechlorination and flush to the network residual.',
-    why: 'A main cannot go live until it is disinfected. This is what the water authority checks.',
+    name: 'Swabbing, chlorination and sampling',
+    what: 'Swab and flush the pipe clean, dose to a high-strength chlorine residual for the contact time, dechlorinate, then take UKAS-lab samples.',
+    why: 'A main cannot go live until it is clean, disinfected and proven safe. This is what the water authority checks before it signs off.',
     included: [
-      'High-strength chlorine dosing',
-      'Held for the required contact time',
-      'Dechlorination and flush to residual',
+      'Foam swabbing and flush',
+      'Chlorination, contact time and dechlorination',
+      'UKAS accredited bacteriological sampling',
     ],
-    serviceType: 'Water main chlorination, disinfection and dechlorination',
-  },
-  {
-    slug: 'bacteriological-sampling',
-    name: 'Bacteriological sampling',
-    what: 'Samples taken and analysed by a UKAS accredited lab for coliforms, E. coli and TVCs.',
-    why: 'The scientific proof your connection needs. A failed sample is what stalls a site.',
-    included: [
-      'Samples drawn on site',
-      'UKAS accredited lab analysis',
-      'Coliforms, E. coli and TVCs',
-    ],
-    serviceType: 'Bacteriological sampling of potable water mains',
+    serviceType: 'Water main swabbing, chlorination, disinfection and bacteriological sampling',
   },
   {
     slug: 'certification',
@@ -78,5 +56,19 @@ export const SERVICES: Service[] = [
       'Primary tie-ins to Scottish Water',
     ],
     serviceType: 'Water mains certification and Scottish Water tie-ins',
+  },
+  {
+    // New box (client request 2026-07-30), placed last. Small-works survey
+    // offered when a fire/sprinkler or water main designer requires it.
+    slug: 'flow-and-pressure-testing',
+    name: 'Flow and pressure testing',
+    what: 'Flow and pressure testing for clients and developers when a fire, sprinkler or water main designer requires it. A small-works survey, quoted on request.',
+    why: 'Designers need real flow and pressure figures to size a system. We provide the survey your design needs.',
+    included: [
+      'Flow and pressure survey',
+      'For fire, sprinkler and water main designs',
+      'Reported for your development',
+    ],
+    serviceType: 'Water flow and pressure testing survey',
   },
 ];

@@ -6,7 +6,7 @@ import JsonLd from '@/components/seo/JsonLd';
 import ContactHero from '@/components/contact/ContactHero';
 import ContactSteps from '@/components/contact/ContactSteps';
 import Coverage from '@/components/home/Coverage';
-import FeaturedTestimonial from '@/components/home/FeaturedTestimonial';
+import Reviews from '@/components/home/Reviews';
 import Faq from '@/components/home/Faq';
 
 export const metadata: Metadata = pageMetadata({
@@ -23,7 +23,7 @@ export default function ContactPage() {
       <ContactHero />
       <ContactSteps />
       <Coverage />
-      <FeaturedTestimonial />
+      <Reviews />
       <Faq />
     </>
   );

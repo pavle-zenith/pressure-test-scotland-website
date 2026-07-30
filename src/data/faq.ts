@@ -18,12 +18,12 @@ export const FAQS: FaqItem[] = [
   {
     question: 'What happens if a sample fails?',
     answer:
-      'The main is re-chlorinated, dechlorinated and flushed, then re-sampled. That costs days, not hours. We manage the disinfection and residual carefully the first time to get a first-time pass, because a failed sample is the thing that stalls a connection and holds up plots.',
+      'The main is re-chlorinated, dechlorinated and flushed, then re-sampled, which costs days, not hours. We manage the disinfection and residual carefully the first time to get a first-time pass, because a failed sample is the thing that stalls a connection and holds up plots. We usually carry any re-chlorination and re-sampling at our own cost and time.',
   },
   {
     question: 'Do private mains need testing too?',
     answer:
-      'Yes. Fire, sprinkler and rising mains, and any private supply that will carry water, need pressure testing and disinfection before use. The water authority or Building Control will want the certificate and sample results. We handle private mains the same way as adoptable ones.',
+      'Yes. Fire, sprinkler and rising mains, and any private supply that will carry water, need pressure testing. The water authority or Building Control will want a test certificate. We handle private mains the same way as adoptable ones. Chlorination and sampling will depend on the project.',
   },
   {
     question: 'How do you price a job?',

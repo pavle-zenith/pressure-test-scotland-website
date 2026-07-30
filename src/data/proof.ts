@@ -83,6 +83,29 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Construction Director',
     company: 'Carlsson Properties Limited',
     confirmed: true,
+    highlight: 'Excellent from start to finish, and second to none.',
+  },
+  {
+    // Real, attributed reference from a main contractor PTS subcontracts to
+    // (supplied by client 2026-07-30). Written from the main contractor's view.
+    quote:
+      'We have had the pleasure of working with this subcontractor for over two years, and throughout that time they have consistently demonstrated an exceptional level of professionalism, reliability, and commitment. Their ability to prioritise urgent work while maintaining high standards has been invaluable to PTS. They work seamlessly with our team, communicate effectively, and take genuine pride in delivering quality results every time. It is rare to find someone with such dedication, consistency, and professionalism. We have no hesitation in recommending them. They are an outstanding subcontractor and a real asset to any company fortunate enough to work with them.',
+    name: 'Megan McLean',
+    role: 'Project Coordinator',
+    company: 'Main contractor',
+    confirmed: true,
+    highlight: 'An outstanding subcontractor and a real asset to any company.',
+  },
+  {
+    // Real, attributed reference from a long-standing client (supplied by client
+    // 2026-07-30). References "Davy" (David Connell, director).
+    quote:
+      'I have had the pleasure of knowing Davy for over 20 years and would highly recommend him. He has always turned up when required and never let me down once. Over the years we have had some challenging sites which Davy has managed to get over the line. I really appreciate his work ethic. I have had some very rural sites and, when it does not go to plan, Davy has stuck with it, sometimes not getting home until the early hours to get it done. Overall he is dedicated, professional and communicates well.',
+    name: 'Jim McCormack',
+    role: 'Utilities Manager',
+    company: 'TSL Contractors Limited',
+    confirmed: true,
+    highlight: 'Over 20 years, he has never let me down once.',
   },
   {
     quote:
@@ -114,10 +137,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const confirmedProjects = PROJECTS.filter((p) => p.confirmed);
 export const confirmedTestimonials = TESTIMONIALS.filter((t) => t.confirmed);
 
-// The single review shown in the featured testimonial section. This is a real,
-// confirmed client testimonial (Peter Mauritzen, Carlsson Properties). The
-// highlight is a short pull-quote drawn from the full review.
-export const featuredTestimonial = {
-  ...TESTIMONIALS[0],
-  highlight: 'Excellent from start to finish, and second to none.',
-};
+// The reviews shown in the Reviews slider, in order. The Currie/Carlsson review
+// leads, then the other confirmed references. One unified section replaces the
+// old separate featured-testimonial + reviews-strip.
+export const sliderTestimonials = confirmedTestimonials;

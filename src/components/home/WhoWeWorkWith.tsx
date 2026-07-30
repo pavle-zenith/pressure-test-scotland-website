@@ -8,6 +8,14 @@ import styles from './WhoWeWorkWith.module.css';
 // icon badge overlapping its bottom edge, then the buyer type and the specific
 // job we do for them.
 
+// Alt text per segment image, in order. Names the scene for accessibility.
+const IMAGE_ALTS: string[] = [
+  'A development site being stripped ready for groundworks',
+  'A new-build housing development under construction',
+  'Water main pipes laid out on site',
+  'An engineering site drawing',
+];
+
 // One line-icon per segment, in order.
 const ICONS: string[] = [
   // Groundworks: excavator/dig
@@ -37,7 +45,7 @@ export default function WhoWeWorkWith() {
               <div className={styles.media}>
                 <Image
                   src={segmentImages[i]}
-                  alt=""
+                  alt={IMAGE_ALTS[i] ?? ''}
                   fill
                   sizes="(max-width: 960px) 50vw, 25vw"
                   className={styles.mediaImg}

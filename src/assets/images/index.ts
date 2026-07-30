@@ -36,13 +36,18 @@ export const serviceImages: Record<string, StaticImageData> = {
   chlorination: svcChlorination,
   'bacteriological-sampling': svcSampling,
   certification: svcCertification,
+  // No dedicated flow/pressure photo yet; reuse the pressure-testing image.
+  'flow-and-pressure-testing': svcPressureTesting,
 };
 
 // Who-we-work-with card images (clean, on top of each card), keyed by index.
-import segGroundworks from './seg-groundworks.jpg';
-import segDevelopers from './seg-developers.jpg';
-import segMultiutility from './seg-multiutility.jpg';
-import segConsultants from './seg-consultants.jpg';
+// Client-supplied photos (2026-07-30) to match each buyer type: a stripped
+// site for groundworks, a housing site for developers, water pipes for
+// ICP/SLO, and a drawing for consultants.
+import segGroundworks from './seg-groundworks-new.jpg';
+import segDevelopers from './seg-developers-new.jpg';
+import segMultiutility from './seg-multiutility-new.jpg';
+import segConsultants from './seg-consultants-new.jpg';
 
 export const segmentImages: StaticImageData[] = [
   segGroundworks,

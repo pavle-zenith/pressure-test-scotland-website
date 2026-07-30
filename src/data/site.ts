@@ -64,12 +64,11 @@ export const SITE = {
     'Scotland',
   ],
 
-  // Primary navigation. The old "Portfolio" item is now "Projects" at /projects.
+  // Primary navigation. About and Projects removed from the nav (2026-07-30);
+  // Contact remains reachable via the header's Get a Quote button.
   nav: [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' },
-    { label: 'Projects', href: '/projects' },
   ] as NavItem[],
 
   // External profiles for schema `sameAs`. Add once confirmed.

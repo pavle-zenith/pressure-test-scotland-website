@@ -103,4 +103,6 @@ export interface Testimonial {
   role: string;
   company: string;
   confirmed: boolean;
+  /** Short pull-quote drawn from the review, shown large in the slider. */
+  highlight?: string;
 }
