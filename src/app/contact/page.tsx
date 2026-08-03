@@ -10,7 +10,7 @@ import Reviews from '@/components/home/Reviews';
 import Faq from '@/components/home/Faq';
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Contact',
+  title: 'Contact, Ayr',
   description:
     'Get a quote for water main commissioning across Scotland. Send your drawings for a price by the next working day, or call our team on 07749 245626.',
   path: '/contact',

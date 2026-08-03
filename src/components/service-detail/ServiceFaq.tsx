@@ -1,4 +1,5 @@
 import Button from '@/components/ui/Button';
+import Icon from '@/components/ui/Icon';
 import type { FaqItem } from '@/data/types';
 import styles from './ServiceFaq.module.css';
 
@@ -22,9 +23,7 @@ export default function ServiceFaq({ faqs }: { faqs: FaqItem[] }) {
             <details key={item.question} className={styles.item} name="sd-faq" open={i === 0}>
               <summary className={styles.q}>
                 <span>{item.question}</span>
-                <svg className={styles.icon} width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <Icon name="chevron-down" size={20} className={styles.icon} />
               </summary>
               <div className={styles.a}><p>{item.answer}</p></div>
             </details>

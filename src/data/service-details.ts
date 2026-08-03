@@ -14,6 +14,12 @@ export interface ProcessStage {
 
 export interface ServiceDetail {
   slug: string;
+  /**
+   * Keyword-first meta title (brand appended by pageMetadata). Front-loads the
+   * search term; keep it under ~35 chars so the whole title stays under 60.
+   * Falls back to the service name when absent.
+   */
+  metaTitle?: string;
   /** One-line tagline shown in the hero and the right rail. */
   tagline: string;
   /** Hero intro sentence. */
@@ -35,6 +41,7 @@ export interface ServiceDetail {
 export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
   'mains-laying': {
     slug: 'mains-laying',
+    metaTitle: 'New Water Mains, Supplied & Laid',
     tagline: 'Laid right. Signed off first time.',
     intro:
       'We supply, lay and construct new water, fire, sprinkler and rising mains as a WIRS accredited contractor, then take the main through commissioning to a certificate.',
@@ -99,6 +106,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
 
   'pressure-testing': {
     slug: 'pressure-testing',
+    metaTitle: 'Water Main Pressure Testing',
     tagline: 'Proven to hold, before it goes live.',
     intro:
       'Data-logged hydrostatic pressure testing that proves a new main holds working pressure before it is tied in and buried. We test PE, MDPE, barrier and ductile.',
@@ -162,6 +170,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
 
   chlorination: {
     slug: 'chlorination',
+    metaTitle: 'Chlorination & Water Sampling',
     tagline: 'Clean, disinfected and proven safe.',
     intro:
       'Swabbing, chlorination, dechlorination and UKAS-lab bacteriological sampling in one package, so the main is clean, disinfected and proven safe before it goes live.',
@@ -225,6 +234,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
 
   certification: {
     slug: 'certification',
+    metaTitle: 'Water Main Certification & Tie-ins',
     tagline: 'The pack that gets you connected.',
     intro:
       'The chlorination certificate and sample results pack, plus primary tie-ins to the existing Scottish Water network, so the main is ready to connect.',
@@ -283,6 +293,7 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
 
   'flow-and-pressure-testing': {
     slug: 'flow-and-pressure-testing',
+    metaTitle: 'Flow & Pressure Testing, Scotland',
     tagline: 'The flow and pressure figures your design needs.',
     intro:
       'Flow and pressure testing for clients and developers across Scotland, provided as a small-works survey when a fire, sprinkler or water main designer requires it.',

@@ -1,6 +1,7 @@
 import Image, { type StaticImageData } from 'next/image';
 import { SITE } from '@/data/site';
 import Button from './Button';
+import Icon from './Icon';
 import styles from './CtaBlock.module.css';
 
 // Dark CTA band. Headline + paragraph on the left, two buttons (quote + phone).
@@ -37,9 +38,7 @@ export default function CtaBlock({
       <div className={styles.actions}>
         <Button href={ctaHref} variant="primary" size="lg" arrow>{ctaLabel}</Button>
         <Button href={SITE.phone.href} variant="white" size="lg">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2Z" fill="currentColor" />
-          </svg>
+          <Icon name="phone" size={17} />
           {SITE.phone.display}
         </Button>
         <p className={styles.emailLine}>

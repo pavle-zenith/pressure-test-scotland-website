@@ -45,9 +45,10 @@
   text-wrap: balance;
 }
 
-/* A short attributed pull-quote filling the space above the certs. */
+/* A short attributed pull-quote filling the space above the certs. Clear
+   separation from the buttons above so it does not read as cramped. */
 .pull {
-  margin: 0;
+  margin: var(--space-2xl) 0 0;
   border-left: 3px solid var(--color-mint);
   padding-left: var(--space-md);
 }
@@ -61,7 +62,7 @@
   max-width: 30ch;
 }
 .pull figcaption {
-  margin-top: var(--space-2xs);
+  margin-top: var(--space-xs);
   font-size: var(--step--1);
   color: var(--color-on-navy-muted);
 }

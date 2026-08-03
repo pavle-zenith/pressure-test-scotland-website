@@ -142,10 +142,6 @@ a.block:hover {
 a.block:hover .blockIcon {
   color: #fff;
 }
-.blockIconDot {
-  position: absolute;
-  inset: 0;
-}
 .blockLabel {
   font-family: var(--font-mono);
   font-size: var(--step--1);

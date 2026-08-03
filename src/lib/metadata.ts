@@ -2,12 +2,15 @@ import type { Metadata } from 'next';
 import { SITE } from '@/data/site';
 import { absolute } from '@/lib/url';
 
-// Builds a Next Metadata object with the house rules baked in: dot separator in
-// titles (never a pipe), canonical URL on the one canonical host, OG/Twitter,
-// en_GB. Per-page metadata spreads the result and overrides as needed.
+// Builds a Next Metadata object with the house rules baked in: pipe separator in
+// titles for local SEO ("Keyword, Ayr | Pressure Test Scotland"), canonical URL
+// on the one canonical host, OG/Twitter, en_GB. Per-page metadata spreads the
+// result and overrides as needed. Keep the whole title under ~60 chars; the
+// brand already carries "Scotland", so pages only add the town (Ayr) where it
+// strengthens the local signal.
 
 interface PageMeta {
-  /** Bare page title; the brand suffix is appended with a dot. */
+  /** Keyword-first page title; the brand is appended with a pipe. */
   title: string;
   description: string;
   /** Site-relative canonical path. */
@@ -24,7 +27,7 @@ export function pageMetadata({
   noindex,
 }: PageMeta): Metadata {
   const brand = SITE.shortName;
-  const fullTitle = title === brand ? title : `${title} . ${brand}`;
+  const fullTitle = title === brand ? title : `${title} | ${brand}`;
   const canonical = absolute(path);
   const images = ogImage
     ? [{ url: ogImage.startsWith('http') ? ogImage : absolute(ogImage) }]

@@ -12,8 +12,8 @@ import MobileActionBar from '@/components/layout/MobileActionBar';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.host),
   title: {
-    default: `Water Mains Commissioning Scotland . ${SITE.shortName}`,
-    template: `%s . ${SITE.shortName}`,
+    default: `Water Mains Pressure Testing Ayr | ${SITE.shortName}`,
+    template: `%s | ${SITE.shortName}`,
   },
   description: SITE.description,
   alternates: { canonical: absolute('/') },

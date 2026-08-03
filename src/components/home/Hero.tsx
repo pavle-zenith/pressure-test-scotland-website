@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { SITE } from '@/data/site';
 import Button from '@/components/ui/Button';
+import Icon from '@/components/ui/Icon';
 import QuoteForm from '@/components/ui/QuoteForm';
 import { confirmedAccreditations } from '@/data/accreditations';
 import { heroPipes } from '@/assets/images';
@@ -37,9 +38,7 @@ export default function Hero() {
             <div className={styles.actions}>
               <Button href="#quote-form" variant="primary" size="lg" arrow>Get my quote</Button>
               <Button href={SITE.phone.href} variant="white" size="lg">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2Z" fill="currentColor" />
-                </svg>
+                <Icon name="phone" size={18} />
                 {SITE.phone.display}
               </Button>
             </div>

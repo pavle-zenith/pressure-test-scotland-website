@@ -14,7 +14,7 @@ import { FAQS } from '@/data/faq';
 import styles from './services.module.css';
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Services',
+  title: 'Water Main Commissioning, Ayr',
   description:
     'Water main laying, swabbing, pressure testing, chlorination, UKAS-lab sampling and certification across Scotland. One specialist for the whole commissioning stage.',
   path: '/services',

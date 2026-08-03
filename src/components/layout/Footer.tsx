@@ -1,6 +1,7 @@
 import { SITE, NAP_ONE_LINE } from '@/data/site';
 import { SERVICES } from '@/data/services';
 import SmartLink from '@/components/ui/SmartLink';
+import Icon from '@/components/ui/Icon';
 import styles from './Footer.module.css';
 
 const year = 2026;
@@ -80,9 +81,7 @@ export default function Footer() {
             </p>
             <SmartLink href="/contact" className={styles.pill}>
               Get a Quote
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <Icon name="arrow-right" size={18} />
             </SmartLink>
           </div>
 

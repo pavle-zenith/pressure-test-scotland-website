@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { SITE } from '@/data/site';
 import { isLiveHref } from '@/lib/routes';
 import Button from '@/components/ui/Button';
+import Icon from '@/components/ui/Icon';
 import styles from './Header.module.css';
 
 function LogoMark() {
@@ -17,14 +18,6 @@ function LogoMark() {
         <path d="M14 26h12" stroke="var(--color-mint)" strokeWidth="2.5" strokeLinecap="round" />
       </svg>
     </span>
-  );
-}
-
-function PhoneIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2Z" fill="currentColor" />
-    </svg>
   );
 }
 
@@ -87,7 +80,7 @@ export default function Header() {
           </ul>
           <div className={styles.actions}>
             <Button href={SITE.phone.href} variant="phone" className={styles.phone}>
-              <PhoneIcon />
+              <Icon name="phone" size={16} />
               {SITE.phone.display}
             </Button>
             <Button href="/contact" variant="primary" arrow className={styles.cta} onClick={() => setOpen(false)}>

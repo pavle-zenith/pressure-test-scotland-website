@@ -32,7 +32,8 @@ export async function generateMetadata({
   const detail = SERVICE_DETAILS[slug];
   if (!service || !detail) return {};
   return pageMetadata({
-    title: service.name,
+    // Keyword-first SEO title; falls back to the plain service name.
+    title: detail.metaTitle ?? service.name,
     description: detail.intro.slice(0, 155),
     path: `/services/${slug}`,
   });

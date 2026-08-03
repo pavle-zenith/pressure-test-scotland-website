@@ -1,6 +1,7 @@
 import Image, { type StaticImageData } from 'next/image';
 import type { Service } from '@/data/types';
 import Button from '@/components/ui/Button';
+import Icon, { type IconName } from '@/components/ui/Icon';
 import styles from './ServiceDetail.module.css';
 
 // One large service card: content on one side, image on the other, alternating
@@ -12,25 +13,14 @@ interface Props {
   image?: StaticImageData;
 }
 
-const icons: Record<string, string> = {
-  'mains-laying': 'M3 12h4l2-3 3 6 2-3h7',
-  'pressure-testing': 'M12 3v5m0 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm3.5 6.5L12 13',
-  chlorination: 'M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z',
-  certification: 'M6 3h9l5 5v13H6zM14 3v6h6M9 13h6M9 17h4',
-  'flow-and-pressure-testing': 'M12 21a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm0-8 4-3',
-};
-
 export default function ServiceDetail({ service, index, image }: Props) {
-  const iconPath = icons[service.slug] ?? 'M4 7h16M4 12h16M4 17h16';
   const flipped = index % 2 === 1;
 
   return (
     <article className={`${styles.card} ${flipped ? styles.flipped : ''}`} id={service.slug}>
       <div className={styles.content}>
         <span className={styles.icon} aria-hidden="true">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-            <path d={iconPath} stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <Icon name={service.slug as IconName} size={30} />
         </span>
 
         <h2 className={styles.title}>

@@ -16,7 +16,8 @@ import Faq from '@/components/home/Faq';
 import FinalCta from '@/components/home/FinalCta';
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Water Mains Commissioning Scotland',
+  // Keyword + town; brand (appended) carries "Scotland". 57 chars total.
+  title: 'Water Mains Pressure Testing Ayr',
   description:
     'Pressure testing, chlorination and UKAS-lab sampling for new water mains across Scotland. Based in Ayr. We get your main passed and signed off first time.',
   path: '/',
