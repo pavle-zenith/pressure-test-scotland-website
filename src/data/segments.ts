@@ -17,7 +17,7 @@ export const SEGMENTS: Segment[] = [
   },
   {
     label: 'Multi-utility',
-    name: 'ICP, SLO and multi-utility contractors',
+    name: 'UCP, SLO and multi-utility contractors',
     job: 'We handle the commissioning stage as your subcontractor, with a certificate pack that fits straight into your submission.',
   },
   {

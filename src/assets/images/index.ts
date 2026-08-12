@@ -25,8 +25,9 @@ export const whyImages: _SID[] = [whyVanImg, whyPipesImg, whyContractorsImg, why
 import svcMainsLaying from './svc-mains-laying.jpg';
 import svcSwabbing from './svc-swabbing.jpg';
 import svcPressureTesting from './svc-pressure-testing.jpg';
-import svcSampling from './svc-sampling.jpg';
-import svcCertification from './svc-certification.jpg';
+// Client-supplied real photos (2026-08-12) for certification and flow/pressure.
+import svcCertification from './svc-certification-new.jpg';
+import svcFlowPressure from './svc-flow-pressure-new.jpg';
 
 // Keys match live SERVICES slugs. Swabbing and bacteriological-sampling were
 // consolidated into the chlorination box (2026-07-30); their photos are reused
@@ -37,14 +38,13 @@ export const serviceImages: Record<string, StaticImageData> = {
   // The consolidated swab/chlorinate/sample box: the swabbing photo reads best.
   chlorination: svcSwabbing,
   certification: svcCertification,
-  // Distinct from pressure-testing so the two do not repeat side by side.
-  'flow-and-pressure-testing': svcSampling,
+  'flow-and-pressure-testing': svcFlowPressure,
 };
 
 // Who-we-work-with card images (clean, on top of each card), keyed by index.
 // Client-supplied photos (2026-07-30) to match each buyer type: a stripped
 // site for groundworks, a housing site for developers, water pipes for
-// ICP/SLO, and a drawing for consultants.
+// UCP/SLO, and a drawing for consultants.
 import segGroundworks from './seg-groundworks-new.jpg';
 import segDevelopers from './seg-developers-new.jpg';
 import segMultiutility from './seg-multiutility-new.jpg';

@@ -32,7 +32,7 @@ export default function Hero() {
               Scotland-wide pipe pressure testing based in Ayr
             </h1>
             <p className={styles.sub}>
-              Data-logged pressure testing, chlorination and UKAS-lab sampling across Scotland. We turn up on the day we book and get you a first-time pass.
+              Data-logged pressure testing, chlorination and UKAS-lab sampling across Scotland. We turn up when we are booked and do our best to get you a first-time pass.
             </p>
 
             <div className={styles.actions}>

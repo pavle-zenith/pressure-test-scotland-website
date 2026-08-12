@@ -43,7 +43,7 @@ export default function Header() {
           <LogoMark />
           <span className={styles.logoText}>
             <span className={styles.logoName}>Pressure Test</span>
-            <span className={styles.logoRegion}>Scotland</span>
+            <span className={styles.logoRegion}>Scotland (Water)</span>
           </span>
         </Link>
 

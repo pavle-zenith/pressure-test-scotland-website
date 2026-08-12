@@ -7,7 +7,9 @@ import styles from './AboutStats.module.css';
 // a navy overlay: the about text and CTA on top, a row of real, defensible
 // figures below. No placeholder repeated percentages.
 const STATS = [
-  { value: '2013', label: 'On Scotland’s water mains since' },
+  // David has personally worked Scotland's water mains since 2003 (the Ltd
+  // company was registered 2013 — that legal date stays in the footer/schema).
+  { value: '2003', label: 'On Scotland’s water mains since' },
   { value: '3', label: 'Accreditations held' },
   { value: 'Scotland', label: 'Coverage, from an Ayr base' },
   { value: '1', label: 'Point of contact, start to certificate' },

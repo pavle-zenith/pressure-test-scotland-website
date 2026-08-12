@@ -18,7 +18,7 @@ export default function ServicesHero() {
         </div>
         <div className={styles.aside}>
           <p className={styles.intro}>
-            From clearing the pipe to the certificate that gets you connected. We supply and lay the main, then swab, test, chlorinate, sample and certify it.
+            From swabbing the pipe to the certificate that gets you connected. We supply and lay the main, then test, chlorinate, sample and certify it.
           </p>
           <Button href="/contact" variant="primary" size="lg" arrow>Get a Quote</Button>
         </div>

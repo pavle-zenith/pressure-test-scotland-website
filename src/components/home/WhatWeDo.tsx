@@ -17,7 +17,7 @@ export default function WhatWeDo() {
           </div>
           <div className={styles.intro}>
             <p>
-              One specialist for the whole commissioning stage, from clearing the pipe to the certificate that gets you connected. We can liaise with Scottish Water, lay the main, pressure test, chlorinate and sample to get the newly laid main connected.
+              One specialist for the whole commissioning stage, from swabbing the pipe to the certificate that gets you connected. We can liaise with Scottish Water, lay the main, pressure test, chlorinate and sample to get the newly laid main connected.
             </p>
             <div className={styles.actions}>
               <Button href="/contact" variant="primary" arrow>Get a Quote</Button>
