@@ -35,9 +35,19 @@ const LEAD_NOTIFY_TO = process.env.LEAD_NOTIFY_TO; // David's inbox
 const LEAD_NOTIFY_FROM =
   process.env.LEAD_NOTIFY_FROM ?? 'quotes@pressuretestscotland.co.uk';
 
+// In production a missing key is a hard failure, never a silent dev-stub: a
+// stubbed "success" would tell a real visitor their quote is in while the lead
+// only lands in the function logs. Local/preview keeps the stub so the flow is
+// testable without secrets.
+const IS_PROD = process.env.VERCEL_ENV === 'production';
+
 /** Insert the lead into the Supabase `leads` table. */
 async function storeLead(lead: Lead): Promise<boolean> {
   if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
+    if (IS_PROD) {
+      console.error('[leads] Supabase env vars missing in production; refusing to fake success');
+      return false;
+    }
     console.info('[leads] Supabase not configured, dev-stubbing store:', lead);
     return true;
   }
@@ -73,6 +83,10 @@ async function storeLead(lead: Lead): Promise<boolean> {
 /** Email David a notification of the new lead via Resend. */
 async function notifyLead(lead: Lead): Promise<boolean> {
   if (!RESEND_API_KEY || !LEAD_NOTIFY_TO) {
+    if (IS_PROD) {
+      console.error('[leads] Resend env vars missing in production; refusing to fake success');
+      return false;
+    }
     console.info('[leads] Resend not configured, dev-stubbing notify:', lead);
     return true;
   }

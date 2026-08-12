@@ -8,6 +8,7 @@ import JsonLd from '@/components/seo/JsonLd';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import MobileActionBar from '@/components/layout/MobileActionBar';
+import Analytics from '@/components/analytics/Analytics';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.host),
@@ -17,7 +18,25 @@ export const metadata: Metadata = {
   },
   description: SITE.description,
   alternates: { canonical: absolute('/') },
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: SITE.name,
+    locale: 'en_GB',
+    url: absolute('/'),
+    title: `Water Mains Pressure Testing Ayr | ${SITE.shortName}`,
+    description: SITE.description,
+    images: ['/og.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Water Mains Pressure Testing Ayr | ${SITE.shortName}`,
+    description: SITE.description,
+    images: ['/og.jpg'],
+  },
 };
 
 export const viewport: Viewport = {
@@ -46,6 +65,7 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <Footer />
         <MobileActionBar />
+        <Analytics />
       </body>
     </html>
   );

@@ -29,9 +29,10 @@ export function pageMetadata({
   const brand = SITE.shortName;
   const fullTitle = title === brand ? title : `${title} | ${brand}`;
   const canonical = absolute(path);
-  const images = ogImage
-    ? [{ url: ogImage.startsWith('http') ? ogImage : absolute(ogImage) }]
-    : undefined;
+  // Default to the sitewide OG card so every shared link renders an image;
+  // a page can still override with its own ogImage.
+  const ogPath = ogImage ?? '/og.jpg';
+  const images = [{ url: ogPath.startsWith('http') ? ogPath : absolute(ogPath) }];
 
   return {
     // `absolute` bypasses the root layout's title template, so the brand suffix
@@ -50,10 +51,10 @@ export function pageMetadata({
       images,
     },
     twitter: {
-      card: images ? 'summary_large_image' : 'summary',
+      card: 'summary_large_image',
       title: fullTitle,
       description,
-      images: images?.map((i) => i.url),
+      images: images.map((i) => i.url),
     },
   };
 }

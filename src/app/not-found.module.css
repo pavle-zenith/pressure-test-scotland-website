@@ -1,0 +1,27 @@
+.wrap {
+  text-align: center;
+}
+
+.title {
+  font-size: var(--step-5);
+  margin-block: var(--space-sm) var(--space-md);
+}
+
+.body {
+  max-width: 48ch;
+  margin-inline: auto;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-top: var(--space-xl);
+}
+
+.call {
+  margin-top: var(--space-lg);
+  color: var(--color-text-muted);
+}

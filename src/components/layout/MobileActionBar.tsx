@@ -7,7 +7,7 @@ import styles from './MobileActionBar.module.css';
 // desktop widths where the header CTA is visible.
 export default function MobileActionBar() {
   return (
-    <div className={styles.bar} role="navigation" aria-label="Quick actions">
+    <div id="mobile-action-bar" className={styles.bar} role="navigation" aria-label="Quick actions">
       <a className={`${styles.action} ${styles.call}`} href={SITE.phone.href}>
         <Icon name="phone" size={18} />
         Call

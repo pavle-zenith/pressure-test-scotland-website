@@ -1,26 +1,29 @@
 # Pressure Test Scotland
 
-> Water mains commissioning specialist based in Ayr, delivering across Scotland. We swab, pressure test, chlorinate, sample and certify new water mains so contractors and developers can connect to the Scottish Water network.
+> Water mains commissioning specialist based in Ayr, delivering across Scotland. We swab, pressure test, chlorinate, sample and certify new water mains so contractors and developers can connect to the Scottish Water network. Quote back by the next working day: call 07749 245626.
 
-Pressure Test Scotland (Water) Ltd (company number SC457216, trading since 2013) handles the commissioning stage of new water mains. We are not a pipeline installer. Groundworks contractors, developers, ICP/SLO multi-utility contractors and consultants use us to take a laid main through to an auditable certificate that Scottish Water accepts for connection.
+Pressure Test Scotland (Water) Ltd (company number SC457216, registered 2013; David has worked Scotland's water mains since 2003) handles the commissioning stage of new water mains, and supplies and lays new mains as a WIRS-accredited contractor. Groundworks contractors, developers, UCP/SLO multi-utility contractors and consultants use us to take a laid main through to an auditable certificate pack that Scottish Water accepts for connection. Accreditations: Lloyd's WIRS, SMAS SSIP, SafeContractor.
 
 ## What mains commissioning involves
 
 The commissioning sequence on a new water main, in order:
 
 1. Swabbing and pre-commission cleaning. A foam swab is driven through the main to clear air and construction debris. Skip it and the pressure test and chlorination both fail.
-2. Hydrostatic pressure testing. Proves the pipe holds working pressure before tie-in.
+2. Hydrostatic pressure testing. Data-logged testing proves the pipe holds working pressure before tie-in. We test PE, MDPE, barrier and ductile.
 3. Chlorination and disinfection. A dosed solution is held for the required contact time, then dechlorinated and flushed to the network residual.
-4. Bacteriological sampling. Lab analysis confirms the main is safe for potable supply.
+4. Bacteriological sampling. UKAS-accredited lab analysis confirms the main is safe for potable supply.
 5. Certification. The auditable certificate pack Scottish Water accepts to permit connection.
 
 ## Services
 
-- [Services](https://www.pressuretestscotland.co.uk/services): swabbing, hydrostatic pressure testing, chlorination and disinfection, bacteriological sampling, full mains commissioning and certification.
-- [Projects](https://www.pressuretestscotland.co.uk/projects): recent commissioning work across Scotland.
-- [About](https://www.pressuretestscotland.co.uk/about): who we are and the standards we work to.
-- [Contact](https://www.pressuretestscotland.co.uk/contact): request a quote or call 01292 440 390.
+- [New mains, supplied and laid](https://www.pressuretestscotland.co.uk/services/mains-laying)
+- [Pressure testing](https://www.pressuretestscotland.co.uk/services/pressure-testing)
+- [Swabbing, chlorination and sampling](https://www.pressuretestscotland.co.uk/services/chlorination)
+- [Certification and tie-ins](https://www.pressuretestscotland.co.uk/services/certification)
+- [Flow and pressure testing](https://www.pressuretestscotland.co.uk/services/flow-and-pressure-testing)
+- [All services](https://www.pressuretestscotland.co.uk/services)
+- [Contact / get a quote](https://www.pressuretestscotland.co.uk/contact): quote back by the next working day, or call 07749 245626.
 
 ## Coverage
 
-Ayrshire base, Scotland-wide delivery. Fast mobilisation across the west and central belt, including Glasgow and Edinburgh.
+Ayr base, Scotland-wide delivery. Fastest mobilisation across the west and central belt, including Glasgow and Edinburgh; wider Scotland booked on programme.

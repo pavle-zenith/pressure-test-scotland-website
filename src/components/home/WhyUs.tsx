@@ -15,12 +15,17 @@ export default function WhyUs() {
   // Auto-rotation stops for good once the user picks a reason, so nobody reading
   // a panel gets yanked to the next (WCAG 2.2.2 Pause, Stop, Hide).
   const [paused, setPaused] = useState(false);
+  // Soft pause while a pointer or keyboard focus is inside the panel, so a
+  // reader hovering/tabbing through is not interrupted; resumes on leave.
+  const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || hovering) return;
+    // Respect a reduced-motion preference: never auto-advance for those users.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const id = setInterval(() => setActive((i) => (i + 1) % points.length), 5000);
     return () => clearInterval(id);
-  }, [points.length, paused]);
+  }, [points.length, paused, hovering]);
 
   const select = (i: number) => {
     setActive(i);
@@ -37,7 +42,13 @@ export default function WhyUs() {
           <h2 id="why-title" className={styles.title}>Why businesses choose Pressure Test Scotland</h2>
         </div>
 
-        <div className={styles.body}>
+        <div
+          className={styles.body}
+          onMouseEnter={() => setHovering(true)}
+          onMouseLeave={() => setHovering(false)}
+          onFocus={() => setHovering(true)}
+          onBlur={() => setHovering(false)}
+        >
           <ul className={styles.list} aria-label="Reasons to choose us">
             {points.map((point, i) => (
               <li key={point.title}>

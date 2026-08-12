@@ -9,8 +9,6 @@ import ServiceDetail from '@/components/services/ServiceDetail';
 import Reviews from '@/components/home/Reviews';
 import Faq from '@/components/home/Faq';
 import FinalCta from '@/components/home/FinalCta';
-import { faqSchema } from '@/lib/schema';
-import { FAQS } from '@/data/faq';
 import styles from './services.module.css';
 
 export const metadata: Metadata = pageMetadata({
@@ -26,7 +24,8 @@ export default function ServicesPage() {
       <JsonLd
         nodes={[
           ...allServiceSchemas(),
-          faqSchema(FAQS),
+          // FAQPage JSON-LD ships once, on the home page, so engines have a
+          // single canonical answer source. The visible accordion stays here.
           breadcrumbSchema([
             { name: 'Home', path: '/' },
             { name: 'Services', path: '/services' },

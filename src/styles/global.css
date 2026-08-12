@@ -87,6 +87,20 @@ strong {
   color: var(--color-on-accent);
 }
 
+/* Honour a reduced-motion preference everywhere: near-instant transitions and
+   animations, no smooth-scroll. Component JS that animates (e.g. the WhyUs
+   auto-rotate) checks the same media query directly. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ---- Layout helpers -------------------------------------------------- */
 .container {
   width: 100%;

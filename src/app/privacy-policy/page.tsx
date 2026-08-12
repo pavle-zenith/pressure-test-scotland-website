@@ -3,10 +3,10 @@ import { pageMetadata } from '@/lib/metadata';
 import { SITE, NAP_ONE_LINE } from '@/data/site';
 import LegalPage from '@/components/legal/LegalPage';
 
-// NOTE: This is accurate template copy grounded in how the site actually
-// handles data (quote form -> Supabase + Resend, no analytics/tracking yet).
-// Have David or a solicitor review before launch, and update if analytics,
-// marketing email, or file uploads are added later.
+// NOTE: Accurate template copy grounded in how the site handles data (quote
+// form -> Supabase + Resend; Google Analytics 4 loaded only after consent).
+// Have David or a solicitor review before launch, and update if marketing
+// email or file uploads are added later.
 
 export const metadata: Metadata = pageMetadata({
   title: 'Privacy Policy',
@@ -18,7 +18,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPage title="Privacy Policy" updated="July 2026">
+    <LegalPage title="Privacy Policy" updated="August 2026">
       <p>
         This policy explains how {SITE.legalName} (&ldquo;we&rdquo;, &ldquo;us&rdquo;) collects and uses your
         personal information when you use this website or get in touch with us. We are the data
@@ -67,9 +67,23 @@ export default function PrivacyPolicyPage() {
         <li><strong>Supabase</strong> stores the details you submit through our forms.</li>
         <li><strong>Resend</strong> delivers the notification email of your enquiry to us.</li>
         <li><strong>Vercel</strong> hosts and serves this website.</li>
+        <li>
+          <strong>Google Analytics</strong> gives us anonymous, aggregated statistics about how the
+          site is used. It runs only if you accept analytics cookies, and it does not receive the
+          details you enter into our forms.
+        </li>
       </ul>
       <p>
         We do not share your information with anyone else unless we are required to by law.
+      </p>
+
+      <h2>Analytics</h2>
+      <p>
+        If you accept analytics cookies, we use Google Analytics to see how visitors find and use the
+        site, so we can improve it. This gives us aggregated, anonymous statistics such as which pages
+        are viewed; IP-address anonymisation is switched on and we do not use it to identify you. Our
+        lawful basis for analytics is your consent, which you can withdraw at any time. If you reject
+        analytics, none of this runs. See our <a href="/cookie-policy">Cookie Policy</a> for detail.
       </p>
 
       <h2>How long we keep it</h2>
@@ -89,8 +103,8 @@ export default function PrivacyPolicyPage() {
 
       <h2>Cookies</h2>
       <p>
-        This website does not set advertising or analytics cookies. See our{' '}
-        <a href="/cookie-policy">Cookie Policy</a> for detail.
+        We set analytics cookies only if you accept them, and we do not use advertising cookies. See
+        our <a href="/cookie-policy">Cookie Policy</a> for detail and for how to change your choice.
       </p>
 
       <h2>Changes to this policy</h2>

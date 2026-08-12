@@ -22,6 +22,8 @@ export function orgSchema(): JsonLdNode {
     name: SITE.name,
     legalName: SITE.legalName,
     url: SITE.host,
+    logo: absolute('/logo.png'),
+    image: absolute('/og.jpg'),
     telephone: SITE.phone.display,
     description: SITE.description,
     foundingDate: String(SITE.foundingYear),

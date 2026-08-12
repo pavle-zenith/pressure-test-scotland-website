@@ -1,25 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { SITE } from '@/data/site';
 import { isLiveHref } from '@/lib/routes';
+import { logoHorizontal } from '@/assets/images';
 import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
 import styles from './Header.module.css';
-
-function LogoMark() {
-  return (
-    <span className={styles.logoMark} aria-hidden="true">
-      <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="6" fill="var(--color-accent)" />
-        <path d="M9 26 C9 15 20 15 20 15 C20 15 31 15 31 26" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M14 26h12" stroke="var(--color-mint)" strokeWidth="2.5" strokeLinecap="round" />
-      </svg>
-    </span>
-  );
-}
 
 export default function Header() {
   const pathname = usePathname();
@@ -40,11 +30,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.logo} aria-label={`${SITE.name}, home`} onClick={() => setOpen(false)}>
-          <LogoMark />
-          <span className={styles.logoText}>
-            <span className={styles.logoName}>Pressure Test</span>
-            <span className={styles.logoRegion}>Scotland (Water)</span>
-          </span>
+          <Image src={logoHorizontal} alt="" className={styles.logoImg} priority sizes="320px" />
         </Link>
 
         <button

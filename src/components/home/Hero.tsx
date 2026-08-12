@@ -68,7 +68,7 @@ export default function Hero() {
 
       <div className={styles.standards}>
         <div className={`container ${styles.standardsRow}`}>
-          <span className={styles.standardsLabel}>UK-wide tested &amp; certified</span>
+          <span className={styles.standardsLabel}>Tested &amp; certified to UK standards</span>
           <ul>
             {STANDARDS.map((s) => (
               <li key={s}><span className={styles.dot} aria-hidden="true" />{s}</li>

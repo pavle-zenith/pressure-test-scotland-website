@@ -21,7 +21,7 @@ export default function WhatWeDo() {
             </p>
             <div className={styles.actions}>
               <Button href="/contact" variant="primary" arrow>Get a Quote</Button>
-              <Button href="/services" variant="secondary">Browse all services</Button>
+              <Button href="/services" variant="secondary">All services</Button>
             </div>
           </div>
         </div>

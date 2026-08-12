@@ -1,0 +1,71 @@
+.banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 200;
+  max-width: 46rem;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  background: var(--color-bg-navy);
+  color: var(--color-on-navy-muted);
+  border: 1px solid var(--color-navy-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.text {
+  flex: 1 1 260px;
+  margin: 0;
+  font-size: var(--step--1);
+  line-height: var(--leading-snug);
+}
+.text a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.accept,
+.reject {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-0);
+  padding: var(--space-2xs) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.accept {
+  background: #fff;
+  color: var(--color-bg-navy);
+  border-color: #fff;
+}
+.accept:hover {
+  background: var(--color-bg-alt);
+}
+.reject {
+  background: transparent;
+  color: #fff;
+  border-color: var(--color-navy-border);
+}
+.reject:hover {
+  border-color: #fff;
+}
+
+/* Clear the fixed mobile action bar (56px) so it never covers the buttons. */
+@media (max-width: 940px) {
+  .banner {
+    bottom: calc(56px + env(safe-area-inset-bottom) + 0.5rem);
+  }
+}

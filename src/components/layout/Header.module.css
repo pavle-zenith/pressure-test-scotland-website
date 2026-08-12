@@ -17,28 +17,17 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2xs);
   flex-shrink: 0;
 }
-.logoText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
+/* Horizontal wordmark, intrinsic 1200x133. Height-constrained; width follows. */
+.logoImg {
+  height: 34px;
+  width: auto;
 }
-.logoName {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.05rem;
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-heading);
-}
-.logoRegion {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
+@media (max-width: 420px) {
+  .logoImg {
+    height: 26px;
+  }
 }
 
 .nav {

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/metadata';
-import { contactPageSchema, faqSchema, breadcrumbSchema } from '@/lib/schema';
-import { FAQS } from '@/data/faq';
+import { contactPageSchema, breadcrumbSchema } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
 import ContactHero from '@/components/contact/ContactHero';
 import ContactSteps from '@/components/contact/ContactSteps';
@@ -22,7 +21,7 @@ export default function ContactPage() {
       <JsonLd
         nodes={[
           contactPageSchema(),
-          faqSchema(FAQS),
+          // FAQPage JSON-LD lives once on the home page (visible accordion stays).
           breadcrumbSchema([
             { name: 'Home', path: '/' },
             { name: 'Contact', path: '/contact' },

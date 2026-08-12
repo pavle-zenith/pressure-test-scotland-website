@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import { SITE, NAP_ONE_LINE } from '@/data/site';
 import { SERVICES } from '@/data/services';
+import { logoHorizontal } from '@/assets/images';
 import SmartLink from '@/components/ui/SmartLink';
 import Icon from '@/components/ui/Icon';
 import styles from './Footer.module.css';
@@ -10,8 +12,11 @@ const year = 2026;
 // demo never hits a 404. The arrow glyph is decorative and CSS-drawn.
 const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] = [
   {
+    // Link the ranking detail pages directly, with descriptive anchor text, so
+    // every page passes internal-link equity to the SEO money pages (not the hub
+    // anchor). Detail routes are gated live per slug in lib/routes.ts.
     heading: 'Services',
-    links: SERVICES.slice(0, 4).map((s) => ({ label: s.name, href: `/services#${s.slug}` })),
+    links: SERVICES.slice(0, 4).map((s) => ({ label: s.name, href: `/services/${s.slug}` })),
   },
   {
     heading: 'Company',
@@ -88,8 +93,10 @@ export default function Footer() {
           {/* Base: identity left, contact right, over a hairline divider. */}
           <div className={styles.base}>
             <div className={styles.baseLeft}>
-              <SmartLink href="/" className={styles.wordmark} aria-label={`${SITE.name}, home`}>
-                {SITE.name}
+              <SmartLink href="/" className={styles.brand} aria-label={`${SITE.name}, home`}>
+                <span className={styles.brandChip}>
+                  <Image src={logoHorizontal} alt="" className={styles.brandImg} sizes="220px" />
+                </span>
               </SmartLink>
               <p className={styles.reg}>
                 &copy; {SITE.foundingYear}&ndash;{year} {SITE.legalName}. Registered in Scotland, company no. {SITE.companyNumber}.
