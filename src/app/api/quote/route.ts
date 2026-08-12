@@ -37,8 +37,14 @@ export async function POST(request: NextRequest) {
   const get = (key: string) => (form.get(key) ?? '').toString().trim();
   const json = wantsJson(request);
 
-  // Honeypot. Bots fill company_url; pretend success.
-  if (get('company_url') !== '') {
+  // Honeypot. Bots fill hp_check; pretend success. The field name is chosen so
+  // browser autofill never matches it (autofill filling the old company_url
+  // field silently discarded real submissions). Log every trip so a silent
+  // discard is visible in the runtime logs rather than invisible.
+  if (get('hp_check') !== '') {
+    console.warn('[leads] honeypot tripped, submission discarded', {
+      source: get('source') || 'website',
+    });
     return json
       ? NextResponse.json({ ok: true })
       : NextResponse.redirect(new URL('/?sent=1#final-cta-title', request.url), 303);

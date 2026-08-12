@@ -82,9 +82,11 @@ export default function QuoteForm({
       )}
 
       <input type="hidden" name="source" value={source} />
-      {/* Honeypot */}
+      {/* Honeypot. Named so browser autofill heuristics never match it
+          (a previous name, company_url, was silently filled by Chrome autofill,
+          which made real submissions look like bots and discarded them). */}
       <div className={styles.hp} aria-hidden="true">
-        <label>Leave this field empty<input type="text" name="company_url" tabIndex={-1} autoComplete="off" /></label>
+        <label>Leave this field empty<input type="text" name="hp_check" tabIndex={-1} autoComplete="off" /></label>
       </div>
 
       <div className={styles.row}>
