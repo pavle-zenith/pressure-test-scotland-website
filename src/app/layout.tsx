@@ -19,7 +19,10 @@ export const metadata: Metadata = {
   description: SITE.description,
   alternates: { canonical: absolute('/') },
   icons: {
-    icon: '/icon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon.png', type: 'image/png', sizes: '256x256' },
+    ],
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
@@ -29,13 +32,13 @@ export const metadata: Metadata = {
     url: absolute('/'),
     title: `Water Mains Pressure Testing Ayr | ${SITE.shortName}`,
     description: SITE.description,
-    images: ['/og.jpg'],
+    images: ['/og.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: `Water Mains Pressure Testing Ayr | ${SITE.shortName}`,
     description: SITE.description,
-    images: ['/og.jpg'],
+    images: ['/og.png'],
   },
 };
 

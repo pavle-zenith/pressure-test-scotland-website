@@ -31,7 +31,7 @@ export function pageMetadata({
   const canonical = absolute(path);
   // Default to the sitewide OG card so every shared link renders an image;
   // a page can still override with its own ogImage.
-  const ogPath = ogImage ?? '/og.jpg';
+  const ogPath = ogImage ?? '/og.png';
   const images = [{ url: ogPath.startsWith('http') ? ogPath : absolute(ogPath) }];
 
   return {

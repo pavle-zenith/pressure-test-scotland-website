@@ -6,15 +6,16 @@ import { SERVICES } from '@/data/services';
 import Icon from './Icon';
 import styles from './QuoteForm.module.css';
 
-// Quote request form: an optional recommendation header, then Name, Site
-// Location, Email, Phone, Service Needed, Message. Posts to /api/quote via fetch
-// with an inline result; degrades to a native POST if JS is off.
+// Quote request form: an optional "Rated 5/5 for excellence" star header, then
+// Name, Site Location, Email, Phone, Service Needed, Message. Posts to
+// /api/quote via fetch with an inline result; degrades to a native POST if JS
+// is off.
 interface Props {
   source?: string;
   /**
-   * Shows the "Recommended by contractors" header (hero form). Wording is
-   * provable from the named references on the reviews section; deliberately not
-   * a star rating, as there is no rating system to substantiate one.
+   * Shows the "Rated 5/5 for excellence" star header (hero form). Client-chosen
+   * wording; there is no rating system behind it, so treat as a marketing claim
+   * the client stands behind rather than a verifiable review score.
    */
   showRating?: boolean;
   submitLabel?: string;
@@ -69,8 +70,14 @@ export default function QuoteForm({
     <form className={styles.form} method="POST" action="/api/quote" noValidate onSubmit={onSubmit}>
       {showRating && (
         <a className={styles.rating} href="/#reviews">
-          <span className={styles.ratingLabel}>Recommended by the contractors who put us on their sites</span>
-          <Icon name="arrow-right" size={16} aria-hidden="true" />
+          <span className={styles.ratingLabel}>Rated 5/5 for excellence</span>
+          <span className={styles.stars} aria-hidden="true">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <svg key={i} width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" />
+              </svg>
+            ))}
+          </span>
         </a>
       )}
 
